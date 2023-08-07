@@ -1,0 +1,79 @@
+{
+    "share-to-added": {
+        "fighter/samus/motion/body/c00/l04eye.nuanmb": [
+            "fighter/samus/motion/body/c01/l04eye.nuanmb",
+            "fighter/samus/motion/body/c02/l04eye.nuanmb",
+            "fighter/samus/motion/body/c03/l04eye.nuanmb",
+            "fighter/samus/motion/body/c04/l04eye.nuanmb",
+            "fighter/samus/motion/body/c05/l04eye.nuanmb",
+            "fighter/samus/motion/body/c06/l04eye.nuanmb",
+            "fighter/samus/motion/body/c07/l04eye.nuanmb"
+        ]
+    },
+    "new-dir-files": {
+        "fighter/samus/c00": [
+            "fighter/samus/motion/body/c00/a05squatb.nuanmb",
+            "fighter/samus/motion/body/c00/a05squatf.nuanmb",
+            "fighter/samus/motion/body/c00/d03specialairlwl.nuanmb",
+            "fighter/samus/motion/body/c00/d03specialairlwr.nuanmb",
+            "fighter/samus/motion/body/c00/d03speciallwl.nuanmb",
+            "fighter/samus/motion/body/c00/d03speciallwr.nuanmb"
+        ],
+        "fighter/samus/c01": [
+            "fighter/samus/motion/body/c01/a05squatb.nuanmb",
+            "fighter/samus/motion/body/c01/a05squatf.nuanmb",
+            "fighter/samus/motion/body/c01/d03specialairlwl.nuanmb",
+            "fighter/samus/motion/body/c01/d03specialairlwr.nuanmb",
+            "fighter/samus/motion/body/c01/d03speciallwl.nuanmb",
+            "fighter/samus/motion/body/c01/d03speciallwr.nuanmb"
+        ],
+        "fighter/samus/c02": [
+            "fighter/samus/motion/body/c02/a05squatb.nuanmb",
+            "fighter/samus/motion/body/c02/a05squatf.nuanmb",
+            "fighter/samus/motion/body/c02/d03specialairlwl.nuanmb",
+            "fighter/samus/motion/body/c02/d03specialairlwr.nuanmb",
+            "fighter/samus/motion/body/c02/d03speciallwl.nuanmb",
+            "fighter/samus/motion/body/c02/d03speciallwr.nuanmb"
+        ],
+        "fighter/samus/c03": [
+            "fighter/samus/motion/body/c03/a05squatb.nuanmb",
+            "fighter/samus/motion/body/c03/a05squatf.nuanmb",
+            "fighter/samus/motion/body/c03/d03specialairlwl.nuanmb",
+            "fighter/samus/motion/body/c03/d03specialairlwr.nuanmb",
+            "fighter/samus/motion/body/c03/d03speciallwl.nuanmb",
+            "fighter/samus/motion/body/c03/d03speciallwr.nuanmb"
+        ],
+        "fighter/samus/c04": [
+            "fighter/samus/motion/body/c04/a05squatb.nuanmb",
+            "fighter/samus/motion/body/c04/a05squatf.nuanmb",
+            "fighter/samus/motion/body/c04/d03specialairlwl.nuanmb",
+            "fighter/samus/motion/body/c04/d03specialairlwr.nuanmb",
+            "fighter/samus/motion/body/c04/d03speciallwl.nuanmb",
+            "fighter/samus/motion/body/c04/d03speciallwr.nuanmb"
+        ],
+        "fighter/samus/c05": [
+            "fighter/samus/motion/body/c05/a05squatb.nuanmb",
+            "fighter/samus/motion/body/c05/a05squatf.nuanmb",
+            "fighter/samus/motion/body/c05/d03specialairlwl.nuanmb",
+            "fighter/samus/motion/body/c05/d03specialairlwr.nuanmb",
+            "fighter/samus/motion/body/c05/d03speciallwl.nuanmb",
+            "fighter/samus/motion/body/c05/d03speciallwr.nuanmb"
+        ],
+        "fighter/samus/c06": [
+            "fighter/samus/motion/body/c06/a05squatb.nuanmb",
+            "fighter/samus/motion/body/c06/a05squatf.nuanmb",
+            "fighter/samus/motion/body/c06/d03specialairlwl.nuanmb",
+            "fighter/samus/motion/body/c06/d03specialairlwr.nuanmb",
+            "fighter/samus/motion/body/c06/d03speciallwl.nuanmb",
+            "fighter/samus/motion/body/c06/d03speciallwr.nuanmb"
+        ],
+        "fighter/samus/c07": [
+            "fighter/samus/motion/body/c07/a05squatb.nuanmb",
+            "fighter/samus/motion/body/c07/a05squatf.nuanmb",
+            "fighter/samus/motion/body/c07/d03specialairlwl.nuanmb",
+            "fighter/samus/motion/body/c07/d03specialairlwr.nuanmb",
+            "fighter/samus/motion/body/c07/d03speciallwl.nuanmb",
+            "fighter/samus/motion/body/c07/d03speciallwr.nuanmb"
+        ]
+    }
+}
