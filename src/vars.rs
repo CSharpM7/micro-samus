@@ -14,4 +14,9 @@ pub mod samus {
             pub const BOMB_COOLDOWN: i32 = 0x0100;
         }
     }
+    pub mod status {
+        pub mod flag {
+            pub const ATTACK_LW3_ICE_PILLAR: i32 = 0x1000;
+        }
+    }
 }

@@ -32,7 +32,7 @@ pub mod imports_acmd {
         },
         smashline::*,
         crate::vars::*,
-        crate::data::gamemode::*,
+        crate::data::gamemode::*
     };
 }
 
@@ -68,6 +68,6 @@ pub mod imports_agent {
         },
         smashline::*,
         crate::vars::*,
-        crate::data::gamemode::*,
+        crate::data::gamemode::*
     };
 }

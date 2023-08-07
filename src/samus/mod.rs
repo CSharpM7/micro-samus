@@ -8,16 +8,16 @@ pub fn install_dev() {
     acmd::install();
     status::install();
     agent::install();
-    frame::install();
+    //frame::install();
 }
 
 pub fn install() {
+    frame::install();
     
     #[cfg(not(feature = "dev"))]{
         acmd::install();
         agent::install();
         status::install();
-        frame::install();
     }
     
     #[cfg(feature = "dev")]{
@@ -26,7 +26,7 @@ pub fn install() {
 }
 
 use crate::imports::imports_agent::*;
-unsafe fn suit_effect(boma: *mut BattleObjectModuleAccessor, battle_object: *mut BattleObject) {
+pub unsafe fn suit_effect(boma: *mut BattleObjectModuleAccessor, battle_object: *mut BattleObject) {
     let is_ice = VarModule::is_flag(battle_object, samus::instance::flag::ICE_MODE);
     if is_ice {
         MotionModule::add_motion_partial(boma, *FIGHTER_SAMUS_MOTION_PART_SET_KIND_VISOR, Hash40::new("visor"), 0.0,1.0, false, false, 0.0, true, true, false); 
@@ -37,4 +37,8 @@ unsafe fn suit_effect(boma: *mut BattleObjectModuleAccessor, battle_object: *mut
     else{
         MotionModule::remove_motion_partial(boma, *FIGHTER_SAMUS_MOTION_PART_SET_KIND_VISOR, false);
     }
+}
+
+pub unsafe fn is_ice(fighter: &mut L2CFighterCommon) -> bool {
+    return VarModule::is_flag(fighter.battle_object, samus::instance::flag::ICE_MODE);
 }
