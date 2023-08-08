@@ -24,8 +24,8 @@ unsafe extern "C" fn attacklw3_main_loop(fighter: &mut L2CFighterCommon) -> L2CV
     return fighter.status_AttackLw3_Main();
 }
 
-#[status_script(agent = "samus", status = FIGHTER_STATUS_KIND_ATTACK_LW3, condition = LUA_SCRIPT_STATUS_FUNC_EXIT_STATUS)]
-unsafe fn attacklw3_exit(fighter: &mut L2CFighterCommon) -> L2CValue {
+#[status_script(agent = "samus", status = FIGHTER_STATUS_KIND_ATTACK_LW3, condition = LUA_SCRIPT_STATUS_FUNC_STATUS_END)]
+unsafe fn attacklw3_end(fighter: &mut L2CFighterCommon) -> L2CValue {
     if VarModule::is_flag(fighter.battle_object, samus::status::flag::ATTACK_LW3_ICE_PILLAR) {
         MotionAnimcmdModule::call_script_single(fighter.module_accessor, *FIGHTER_ANIMCMD_EFFECT, Hash40::new("effect_attacklw32end"), -1);
         MotionAnimcmdModule::call_script_single(fighter.module_accessor, *FIGHTER_ANIMCMD_SOUND, Hash40::new("sound_attacklw32end"), -1);
@@ -33,9 +33,176 @@ unsafe fn attacklw3_exit(fighter: &mut L2CFighterCommon) -> L2CValue {
     0.into()
 }
 
+
+#[status_script(agent = "samus", status = FIGHTER_STATUS_KIND_ATTACK_S4_START, condition = LUA_SCRIPT_STATUS_FUNC_STATUS_MAIN)]
+unsafe fn attacks4_start_main(fighter: &mut L2CFighterCommon) -> L2CValue {
+    if !is_ice(fighter){
+        return original!(fighter);
+    }
+    fighter.status_AttackS4Start_Common();
+    attacks4_anim(fighter,false);
+    
+    fighter.sub_shift_status_main(L2CValue::Ptr(attacks4_start_loop as *const () as _))
+}
+unsafe extern "C" fn attacks4_start_loop(fighter: &mut L2CFighterCommon) -> L2CValue {
+    return fighter.status_AttackS4Start_Main()
+}
+
+#[status_script(agent = "samus", status = FIGHTER_STATUS_KIND_ATTACK_S4_HOLD, condition = LUA_SCRIPT_STATUS_FUNC_STATUS_MAIN)]
+unsafe fn attacks4_hold_main(fighter: &mut L2CFighterCommon) -> L2CValue {
+    if !is_ice(fighter){
+        return original!(fighter);
+    }
+    fighter.status_AttackS4Hold();
+    attacks4_anim(fighter,true);
+    fighter.sub_shift_status_main(L2CValue::Ptr(attacks4_hold_loop as *const () as _))
+}
+unsafe extern "C" fn attacks4_hold_loop(fighter: &mut L2CFighterCommon) -> L2CValue {
+    return fighter.status_AttackS4Hold_main()
+}
+#[status_script(agent = "samus", status = FIGHTER_STATUS_KIND_ATTACK_S4, condition = LUA_SCRIPT_STATUS_FUNC_STATUS_MAIN)]
+unsafe fn attacks4_main(fighter: &mut L2CFighterCommon) -> L2CValue {
+    if !is_ice(fighter){
+        return original!(fighter);
+    }
+    fighter.status_AttackS4();
+    attacks4_anim(fighter,false);
+    fighter.sub_shift_status_main(L2CValue::Ptr(attacks4_main_loop as *const () as _))
+}
+unsafe extern "C" fn attacks4_main_loop(fighter: &mut L2CFighterCommon) -> L2CValue {
+    return fighter.status_AttackLw4_Main() //Using Lw4 prevents angling
+}
+
+unsafe extern "C" fn attacks4_anim(fighter: &mut L2CFighterCommon, charge: bool) {
+    let targetMotion = if charge {Hash40::new("attack_s4_hold2")} else {Hash40::new("attack_s4_s2")};
+    let motion = MotionModule::motion_kind(fighter.module_accessor);
+    if motion != targetMotion.hash{
+        MotionModule::change_motion_inherit_frame_keep_rate(fighter.module_accessor, targetMotion, -1.0, 1.0, 0.0);
+    }
+    //LinkModule::send_event_nodes(fighter.module_accessor, *LINK_NO_ARTICLE, Hash40::new_raw(0x1c5609e30f), 0);
+}
+
+unsafe extern "C" fn attacks4_end_eff(fighter: &mut L2CFighterCommon) {
+    COL_NORMAL(fighter);
+    if is_ice(fighter) {
+        EFFECT_OFF_KIND(fighter,Hash40::new("sys_ice"),false,false);
+    }
+}
+#[status_script(agent = "samus", status = FIGHTER_STATUS_KIND_ATTACK_S4, condition = LUA_SCRIPT_STATUS_FUNC_STATUS_PRE)]
+unsafe fn attacks4_pre(fighter: &mut L2CFighterCommon) -> L2CValue {
+    if !is_ice(fighter) {
+        return original!(fighter);
+    }
+    fighter.status_pre_AttackS4();
+    StatusModule::init_settings(
+        fighter.module_accessor,
+        app::SituationKind(*SITUATION_KIND_GROUND),
+        *FIGHTER_KINETIC_TYPE_MOTION,
+        *GROUND_CORRECT_KIND_GROUND_CLIFF_STOP as u32,
+        app::GroundCliffCheckKind(*GROUND_CLIFF_CHECK_KIND_NONE),
+        true,
+        *FIGHTER_STATUS_WORK_KEEP_FLAG_ATTACK_4_FLAG,
+        *FIGHTER_STATUS_WORK_KEEP_FLAG_ATTACK_4_INT,
+        *FIGHTER_STATUS_WORK_KEEP_FLAG_ATTACK_4_FLOAT,
+        *FS_SUCCEEDS_KEEP_EFFECT,
+    );
+
+    ModelModule::set_joint_scale(fighter.module_accessor, Hash40::new("handr"),&Vector3f{ x: 1.0, y: 1.0, z: 1.0});
+    0.into()
+}
+
+
+#[status_script(agent = "samus", status = FIGHTER_STATUS_KIND_ATTACK_HI4_START, condition = LUA_SCRIPT_STATUS_FUNC_STATUS_MAIN)]
+unsafe fn attackhi4_start_main(fighter: &mut L2CFighterCommon) -> L2CValue {
+    if !is_ice(fighter){
+        return original!(fighter);
+    }
+    fighter.status_AttackHi4Start();
+    //fighter.status_AttackHi4Start_common(0.into());
+    attackhi4_anim(fighter,false);
+    
+    fighter.sub_shift_status_main(L2CValue::Ptr(attackhi4_start_loop as *const () as _))
+}
+unsafe extern "C" fn attackhi4_start_loop(fighter: &mut L2CFighterCommon) -> L2CValue {
+    return fighter.status_AttackHi4Start_Main()
+}
+
+#[status_script(agent = "samus", status = FIGHTER_STATUS_KIND_ATTACK_HI4_HOLD, condition = LUA_SCRIPT_STATUS_FUNC_STATUS_MAIN)]
+unsafe fn attackhi4_hold_main(fighter: &mut L2CFighterCommon) -> L2CValue {
+    if !is_ice(fighter){
+        return original!(fighter);
+    }
+    fighter.status_AttackHi4Hold();
+    attackhi4_anim(fighter,true);
+    fighter.sub_shift_status_main(L2CValue::Ptr(attackhi4_hold_loop as *const () as _))
+}
+unsafe extern "C" fn attackhi4_hold_loop(fighter: &mut L2CFighterCommon) -> L2CValue {
+    return fighter.status_AttackHi4Hold_main()
+}
+#[status_script(agent = "samus", status = FIGHTER_STATUS_KIND_ATTACK_HI4, condition = LUA_SCRIPT_STATUS_FUNC_STATUS_MAIN)]
+unsafe fn attackhi4_main(fighter: &mut L2CFighterCommon) -> L2CValue {
+    if !is_ice(fighter){
+        return original!(fighter);
+    }
+    fighter.status_AttackHi4();
+    attackhi4_anim(fighter,false);
+    fighter.sub_shift_status_main(L2CValue::Ptr(attackhi4_main_loop as *const () as _))
+}
+unsafe extern "C" fn attackhi4_main_loop(fighter: &mut L2CFighterCommon) -> L2CValue {
+    return fighter.status_AttackHi4_Main()
+}
+
+unsafe extern "C" fn attackhi4_anim(fighter: &mut L2CFighterCommon, charge: bool) {
+    let targetMotion = if charge {Hash40::new("attack_hi4_hold2")} else {Hash40::new("attack_hi42")};
+    let motion = MotionModule::motion_kind(fighter.module_accessor);
+    if motion != targetMotion.hash{
+        MotionModule::change_motion_inherit_frame_keep_rate(fighter.module_accessor, targetMotion, -1.0, 1.0, 0.0);
+    }
+    //LinkModule::send_event_nodes(fighter.module_accessor, *LINK_NO_ARTICLE, Hash40::new_raw(0x1c5609e30f), 0);
+}
+
+unsafe extern "C" fn attackhi4_end_eff(fighter: &mut L2CFighterCommon) {
+    COL_NORMAL(fighter);
+    if is_ice(fighter) {
+        EFFECT_OFF_KIND(fighter,Hash40::new("sys_ice"),false,false);
+    }
+}
+#[status_script(agent = "samus", status = FIGHTER_STATUS_KIND_ATTACK_HI4, condition = LUA_SCRIPT_STATUS_FUNC_STATUS_PRE)]
+unsafe fn attackhi4_pre(fighter: &mut L2CFighterCommon) -> L2CValue {
+    if !is_ice(fighter) {
+        return original!(fighter);
+    }
+    fighter.status_pre_AttackHi4();
+    StatusModule::init_settings(
+        fighter.module_accessor,
+        app::SituationKind(*SITUATION_KIND_GROUND),
+        *FIGHTER_KINETIC_TYPE_MOTION,
+        *GROUND_CORRECT_KIND_GROUND_CLIFF_STOP as u32,
+        app::GroundCliffCheckKind(*GROUND_CLIFF_CHECK_KIND_NONE),
+        true,
+        *FIGHTER_STATUS_WORK_KEEP_FLAG_ATTACK_4_FLAG,
+        *FIGHTER_STATUS_WORK_KEEP_FLAG_ATTACK_4_INT,
+        *FIGHTER_STATUS_WORK_KEEP_FLAG_ATTACK_4_FLOAT,
+        *FS_SUCCEEDS_KEEP_EFFECT,
+    );
+
+    ModelModule::set_joint_scale(fighter.module_accessor, Hash40::new("handr"),&Vector3f{ x: 1.0, y: 1.0, z: 1.0});
+    0.into()
+}
+
 pub fn install() {
     install_status_scripts!(
         attacklw3_main,
-        attacklw3_exit     
+        attacklw3_end,
+
+        attacks4_start_main,
+        attacks4_hold_main,
+        attacks4_main,
+        attacks4_pre,
+
+        attackhi4_start_main,
+        attackhi4_hold_main,
+        attackhi4_main,
+        attackhi4_pre,
     );
 }

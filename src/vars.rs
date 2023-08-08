@@ -1,4 +1,5 @@
 pub mod samus {
+    pub const FSMASH_LENGTH: f32 = 14.0;
     pub const MORPH_FRAME: f32 = 7.0; //12.0
     pub const LOOP_FRAME: f32 = 27.0; //32.0
     pub const UNMORPH_FRAME: f32 = 30.0;

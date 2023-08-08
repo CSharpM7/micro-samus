@@ -2369,7 +2369,7 @@ list:
     extra:
       xlu_start: 0
       xlu_end: 0
-      cancel_frame: 45
+      cancel_frame: 50
       no_stop_intp: false
   attack_s4_hi:
     game_script: game_attacks4hi
@@ -2491,6 +2491,66 @@ list:
       xlu_end: 0
       cancel_frame: 0
       no_stop_intp: false
+  attack_s4_s2:
+    game_script: game_attacks42
+    flags:
+      turn: false
+      loop: false
+      move: false
+      fix_trans: false
+      fix_rot: false
+      fix_scale: false
+      unk_40: false
+      unk_80: true
+      unk_100: false
+      unk_200: false
+      unk_400: false
+      unk_800: false
+      unk_1000: false
+      unk_2000: false
+    blend_frames: 0
+    animations:
+      - name: c03attacks4s2.nuanmb
+        unk: 0
+    scripts:
+      - expression_attacks42
+      - sound_attacks42
+      - effect_attacks42
+    extra:
+      xlu_start: 0
+      xlu_end: 0
+      cancel_frame: 49
+      no_stop_intp: false
+  attack_s4_hold2:
+    game_script: game_attacks4charge
+    flags:
+      turn: false
+      loop: false
+      move: false
+      fix_trans: false
+      fix_rot: false
+      fix_scale: false
+      unk_40: false
+      unk_80: true
+      unk_100: false
+      unk_200: false
+      unk_400: false
+      unk_800: false
+      unk_1000: false
+      unk_2000: false
+    blend_frames: 0
+    animations:
+      - name: c03attacks4charge2.nuanmb
+        unk: 0
+    scripts:
+      - expression_attacks4charge
+      - sound_attacks4charge2
+      - effect_attacks4charge2
+    extra:
+      xlu_start: 0
+      xlu_end: 0
+      cancel_frame: 0
+      no_stop_intp: false
   attack_hi4:
     game_script: game_attackhi4
     flags:
@@ -2546,6 +2606,66 @@ list:
       - expression_attackhi4charge
       - sound_attackhi4charge
       - effect_attackhi4charge
+    extra:
+      xlu_start: 0
+      xlu_end: 0
+      cancel_frame: 0
+      no_stop_intp: false
+  attack_hi42:
+    game_script: game_attackhi42
+    flags:
+      turn: false
+      loop: false
+      move: true
+      fix_trans: false
+      fix_rot: false
+      fix_scale: false
+      unk_40: false
+      unk_80: true
+      unk_100: false
+      unk_200: false
+      unk_400: false
+      unk_800: false
+      unk_1000: false
+      unk_2000: false
+    blend_frames: 0
+    animations:
+      - name: c04attackhi42.nuanmb
+        unk: 0
+    scripts:
+      - expression_attackhi42
+      - sound_attackhi42
+      - effect_attackhi42
+    extra:
+      xlu_start: 0
+      xlu_end: 0
+      cancel_frame: 57
+      no_stop_intp: true
+  attack_hi4_hold2:
+    game_script: game_attackhi4charge
+    flags:
+      turn: false
+      loop: false
+      move: true
+      fix_trans: false
+      fix_rot: false
+      fix_scale: false
+      unk_40: false
+      unk_80: true
+      unk_100: false
+      unk_200: false
+      unk_400: false
+      unk_800: false
+      unk_1000: false
+      unk_2000: false
+    blend_frames: 0
+    animations:
+      - name: c04attackhi4charge2.nuanmb
+        unk: 0
+    scripts:
+      - expression_attackhi4charge2
+      - sound_attackhi4charge2
+      - effect_attackhi4charge2
     extra:
       xlu_start: 0
       xlu_end: 0

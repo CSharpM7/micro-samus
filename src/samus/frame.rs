@@ -192,12 +192,13 @@ fn global_fighter_frame(fighter: &mut L2CFighterCommon) {
 }
 
 pub fn install() {
+    /* 
+    #[cfg(feature = "dev")]
     smashline::install_agent_frame_callbacks!(
       global_fighter_frame
-    );/* 
+    );*/
 
-    #[cfg(not(feature = "dev"))]
     smashline::install_agent_frames!(
         samus_frame
-    );*/
+    );
 }
