@@ -18,6 +18,7 @@ pub mod samus {
     pub mod status {
         pub mod flag {
             pub const ATTACK_LW3_ICE_PILLAR: i32 = 0x1000;
+            pub const ATTACK_HAS_ICE: i32 = 0x1001;
         }
     }
 }

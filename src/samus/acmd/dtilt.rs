@@ -90,7 +90,7 @@ unsafe fn effect_attacklw3(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         if VarModule::is_flag(agent.battle_object, samus::status::flag::ATTACK_LW3_ICE_PILLAR) {
             MotionAnimcmdModule::call_script_single(agent.module_accessor, *FIGHTER_ANIMCMD_EFFECT, Hash40::new("effect_attacklw32end"), -1);
-            MotionAnimcmdModule::call_script_single(agent.module_accessor, *FIGHTER_ANIMCMD_SOUND, Hash40::new("sound_attacklw32end"), -1);
+            MotionAnimcmdModule::call_script_single(agent.module_accessor, *FIGHTER_ANIMCMD_SOUND, Hash40::new("sound_ice_break"), -1);
             VarModule::off_flag(agent.battle_object, samus::status::flag::ATTACK_LW3_ICE_PILLAR);
         }
     }
@@ -111,12 +111,6 @@ unsafe fn sound_attacklw3(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 6.0);
     if macros::is_excute(agent) {
         macros::PLAY_SE(agent, Hash40::new("se_common_freeze"));
-    }
-}
-#[acmd_script( agent = "samus", script = "sound_attacklw32end", category = ACMD_SOUND, low_priority )]
-unsafe fn sound_attacklw3_end(agent: &mut L2CAgentBase) {
-    if macros::is_excute(agent) {
-        macros::PLAY_SE(agent, Hash40::new("se_item_ice_crash"));
     }
 }
 
@@ -144,6 +138,5 @@ pub fn install() {
         expression_attacklw3,
 
         effect_attacklw3_end,
-        sound_attacklw3_end,
     );
 }

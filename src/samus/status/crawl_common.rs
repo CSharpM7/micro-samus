@@ -20,7 +20,7 @@ unsafe fn status_squat_wait_main(fighter: &mut L2CFighterCommon) -> L2CValue {
         *FIGHTER_STATUS_KIND_SQUAT_F,*FIGHTER_STATUS_KIND_SQUAT_B,*FIGHTER_STATUS_KIND_SQUAT_WAIT,
     *FIGHTER_SAMUS_STATUS_KIND_BOMB_JUMP,*FIGHTER_SAMUS_STATUS_KIND_BOMB_JUMP_A,*FIGHTER_SAMUS_STATUS_KIND_BOMB_JUMP_G
     ].contains(&prev){
-        VarModule::set_int(fighter.battle_object, samus::instance::int::BOMB_COOLDOWN, 0);
+        //VarModule::set_int(fighter.battle_object, samus::instance::int::BOMB_COOLDOWN, 0);
         return call_original!(fighter);
     }
     MotionModule::change_motion_force_inherit_frame(fighter.module_accessor, Hash40::new("squat_n"), 3.0,0.0, 0.0);

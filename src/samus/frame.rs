@@ -155,6 +155,8 @@ unsafe fn samus_update(fighter: &mut L2CFighterCommon) {
     if let Some(info) = FighterInfo::get_common(fighter) {
         let boma = &mut *info.boma;
 
+        VarModule::countdown_int(fighter.battle_object, samus::instance::int::BOMB_COOLDOWN, 0);
+        
         super::suit_effect(fighter.module_accessor, fighter.battle_object);
         //morphball_moveset(fighter,boma,info.status_kind,info.situation_kind,info.lr,info.frame);
         specials_force_weapon(boma,fighter.battle_object,info.status_kind,info.situation_kind,info.frame);

@@ -4,6 +4,13 @@ unsafe extern "C" fn change_status_callback(fighter: &mut L2CFighterCommon) -> L
     let boma = fighter.module_accessor;
 
     super::suit_effect(boma, fighter.battle_object);
+    if is_damage_status(boma){
+        EFFECT_OFF_KIND(fighter,Hash40::new("sys_ice"),false,false);
+        if VarModule::is_flag(fighter.battle_object, samus::status::flag::ATTACK_HAS_ICE){
+            //MotionAnimcmdModule::call_script_single(fighter.module_accessor, *FIGHTER_ANIMCMD_SOUND, Hash40::new("sound_ice_break"), -1);
+            VarModule::off_flag(fighter.battle_object, samus::status::flag::ATTACK_HAS_ICE);
+        }
+    }
     true.into()
 }
 

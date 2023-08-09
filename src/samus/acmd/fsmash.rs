@@ -1,9 +1,9 @@
 use crate::imports::imports_acmd::*;
 
-pub const DAMAGE: f32 = 10.0;
-pub const ANGLE: u64 = 85 ;
-pub const KBG: i32 = 50;
-pub const BKB: i32 = 80;
+pub const DAMAGE: f32 = 12.0;
+pub const ANGLE: u64 = 361;
+pub const KBG: [i32;2] = [100,112];
+pub const BKB: [i32;2] = [40,16];
 pub const SIZE: f32 = 6.8;
 
 
@@ -15,10 +15,10 @@ unsafe fn game_attacks4(agent: &mut L2CAgentBase) {
     }
     frame(agent.lua_state_agent, 12.0);
     if macros::is_excute(agent) {
-        macros::ATTACK(agent, 0, 0, Hash40::new("armr"), 12.0, 361, 112, 0, 16, 2.8, -1.2, 0.0, 0.0, None, None, None, 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_normal"), *ATTACK_SOUND_LEVEL_M, *COLLISION_SOUND_ATTR_PUNCH, *ATTACK_REGION_PUNCH);
-        macros::ATTACK(agent, 1, 0, Hash40::new("armr"), 14.0, 361, 100, 0, 40, 3.5, 3.75, 0.0, 0.0, None, None, None, 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_cutup"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_CUTUP, *ATTACK_REGION_PUNCH);
-        macros::ATTACK(agent, 2, 0, Hash40::new("armr"), 14.0, 361, 100, 0, 40, 3.25, 7.5, 0.0, 0.0, None, None, None, 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_cutup"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_CUTUP, *ATTACK_REGION_PUNCH);
-        macros::ATTACK(agent, 3, 0, Hash40::new("armr"), 14.0, 361, 100, 0, 40, 3.0, samus::FSMASH_LENGTH-1.3, 0.0, 0.0, None, None, None, 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_cutup"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_CUTUP, *ATTACK_REGION_PUNCH);
+        macros::ATTACK(agent, 0, 0, Hash40::new("armr"), DAMAGE-2.0, ANGLE, KBG[1], 0, BKB[1], 2.8, -1.2, 0.0, 0.0, None, None, None, 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_normal"), *ATTACK_SOUND_LEVEL_M, *COLLISION_SOUND_ATTR_PUNCH, *ATTACK_REGION_PUNCH);
+        macros::ATTACK(agent, 1, 0, Hash40::new("armr"), DAMAGE, ANGLE, KBG[0], 0, BKB[0], 3.5, 3.75, 0.0, 0.0, None, None, None, 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_cutup"), *ATTACK_SOUND_LEVEL_M, *COLLISION_SOUND_ATTR_CUTUP, *ATTACK_REGION_PUNCH);
+        macros::ATTACK(agent, 2, 0, Hash40::new("armr"), DAMAGE, ANGLE, KBG[0], 0, BKB[0], 3.25, 7.5, 0.0, 0.0, None, None, None, 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_cutup"), *ATTACK_SOUND_LEVEL_M, *COLLISION_SOUND_ATTR_CUTUP, *ATTACK_REGION_PUNCH);
+        macros::ATTACK(agent, 3, 0, Hash40::new("armr"), DAMAGE+2.0, ANGLE, KBG[0], 0, BKB[0], 3.0, samus::FSMASH_LENGTH-1.3, 0.0, 0.0, None, None, None, 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_cutup"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_CUTUP, *ATTACK_REGION_PUNCH);
     }
     wait(agent.lua_state_agent, 3.0);
     if macros::is_excute(agent) {
@@ -26,13 +26,23 @@ unsafe fn game_attacks4(agent: &mut L2CAgentBase) {
     }
 }
 
+#[acmd_script( agent = "samus", script = "game_attacks42_break", category = ACMD_GAME, low_priority )]
+unsafe fn game_attacks4_break(agent: &mut L2CAgentBase) {
+    if macros::is_excute(agent) {
+        macros::ATTACK(agent, 1, 0, Hash40::new("armr"), DAMAGE-2.0, ANGLE, KBG[1], 0, BKB[1], 2.8, 1.0, 0.0, 0.0, None, None, None, 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_normal"), *ATTACK_SOUND_LEVEL_M, *COLLISION_SOUND_ATTR_PUNCH, *ATTACK_REGION_PUNCH);
+        macros::ATTACK(agent, 2, 0, Hash40::new("armr"), DAMAGE-2.0, ANGLE, KBG[1], 0, BKB[0], 2.8, 5.0, 0.0, 0.0, None, None, None, 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_normal"), *ATTACK_SOUND_LEVEL_M, *COLLISION_SOUND_ATTR_PUNCH, *ATTACK_REGION_PUNCH);
+
+        AttackModule::clear(agent.module_accessor,3,false);
+    }
+}
+
 #[acmd_script( agent = "samus", script = "effect_attacks42", category = ACMD_EFFECT, low_priority )]
 unsafe fn effect_attacks4(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 1.5);
     if macros::is_excute(agent) {
-        //MotionAnimcmdModule::call_script_single(agent.module_accessor, *FIGHTER_ANIMCMD_EFFECT, Hash40::new("effect_attacks4ice"), -1);
-        macros::EFFECT_FOLLOW(agent, Hash40::new("sys_ice"), Hash40::new("handr"), 5.0, 0.0, 0.0, 0, 0, -90, 0.2, true);
-        LAST_EFFECT_SET_SCALE_W(agent,0.18,samus::FSMASH_LENGTH*0.06,0.18);
+        //macros::EFFECT_FOLLOW(agent, Hash40::new("sys_ice"), Hash40::new("handr"), 5.0, 0.0, 0.0, 0, 0, -90, 0.2, true);
+        //LAST_EFFECT_SET_SCALE_W(agent,0.18,samus::FSMASH_LENGTH*0.06,0.18);
+        MotionAnimcmdModule::call_script_single(agent.module_accessor, *FIGHTER_ANIMCMD_EFFECT, Hash40::new("effect_ice_lance"), -1);
     }
     frame(agent.lua_state_agent, 3.0);
     if macros::is_excute(agent) {
@@ -96,7 +106,7 @@ unsafe fn expression_attacks4(agent: &mut L2CAgentBase) {
     }
     frame(agent.lua_state_agent, 10.0);
     if macros::is_excute(agent) {
-        macros::RUMBLE_HIT(agent, Hash40::new("rbkind_attackll"), 0);
+        macros::RUMBLE_HIT(agent, Hash40::new("rbkind_slashl"), 0);
         ControlModule::set_rumble(agent.module_accessor, Hash40::new("rbkind_nohitl"), 0, false, *BATTLE_OBJECT_ID_INVALID as u32);
     }
     frame(agent.lua_state_agent, 50.0);
@@ -117,10 +127,6 @@ unsafe fn sound_attacks4charge(agent: &mut L2CAgentBase) {
 
 #[acmd_script( agent = "samus", script = "effect_attacks4charge2", category = ACMD_EFFECT, low_priority )]
 unsafe fn effect_attacks4charge(agent: &mut L2CAgentBase) {
-    frame(agent.lua_state_agent, 3.0);
-    if macros::is_excute(agent) {
-        //MotionAnimcmdModule::call_script_single(agent.module_accessor, *FIGHTER_ANIMCMD_EFFECT, Hash40::new("effect_attacks4ice"), -1);
-    }
     frame(agent.lua_state_agent, 5.0);
     for i in 1..i32::MAX{
         if macros::is_excute(agent) {
@@ -166,18 +172,11 @@ unsafe fn expression_attacks4charge(agent: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", script = "effect_attacks4ice", category = ACMD_EFFECT, low_priority )]
-unsafe fn effect_attacks4ice(agent: &mut L2CAgentBase) {
-    if macros::is_excute(agent) {
-        //macros::EFFECT_FOLLOW(agent, Hash40::new("sys_ice"), Hash40::new("armr"), 8.0, 0.0, 0.0, 0, 0, -90, 0.2, true);
-        macros::EFFECT_FOLLOW(agent, Hash40::new("sys_ice"), Hash40::new("handr"), 5.0, 0.0, 0.0, 0, 0, -90, 0.2, true);
-        LAST_EFFECT_SET_SCALE_W(agent,0.18,samus::FSMASH_LENGTH*0.06,0.18);
-    }
-}
-
 pub fn install() {
     install_acmd_scripts!(
         game_attacks4,
+        game_attacks4_break,
+
         effect_attacks4,
         sound_attacks4,
         expression_attacks4,
@@ -185,6 +184,5 @@ pub fn install() {
         sound_attacks4charge,
         effect_attacks4charge,
         expression_attacks4charge,
-        effect_attacks4ice,
     );
 }
