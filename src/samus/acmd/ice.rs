@@ -1,6 +1,6 @@
 use crate::imports::imports_acmd::*;
 
-#[acmd_script( agent = "samus", script = "effect_ice_lance", category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", script = "effect_ice_lance", category = ACMD_EFFECT)]
 unsafe fn effect_ice_lance(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         macros::EFFECT_FOLLOW(agent, Hash40::new("sys_ice"), Hash40::new("handr"), 5.0, 0.0, 0.0, 0, 0, -90, 0.2, true);
@@ -8,7 +8,7 @@ unsafe fn effect_ice_lance(agent: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", script = "effect_ice_lance_break", category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", script = "effect_ice_lance_break", category = ACMD_EFFECT)]
 unsafe fn effect_ice_lance_break(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         EFFECT_OFF_KIND(agent,Hash40::new("sys_ice"),false,false);
@@ -17,7 +17,7 @@ unsafe fn effect_ice_lance_break(agent: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", script = "effect_ice_punch", category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", script = "effect_ice_punch", category = ACMD_EFFECT)]
 unsafe fn effect_ice_punch(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         macros::EFFECT_FOLLOW(agent, Hash40::new("sys_ice"), Hash40::new("handr"), -1.5, 0.0, 0.0, 0, 0, 90, 0.15, true);
@@ -26,7 +26,7 @@ unsafe fn effect_ice_punch(agent: &mut L2CAgentBase) {
         LAST_EFFECT_SET_SCALE_W(agent,0.175,0.275,0.175);
     }
 }
-#[acmd_script( agent = "samus", script = "effect_ice_punch_break", category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", script = "effect_ice_punch_break", category = ACMD_EFFECT)]
 unsafe fn effect_ice_punch_break(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         println!("Punch break!");
@@ -36,7 +36,7 @@ unsafe fn effect_ice_punch_break(agent: &mut L2CAgentBase) {
 }
 
 
-#[acmd_script( agent = "samus", script = "sound_ice_break", category = ACMD_SOUND, low_priority )]
+#[acmd_script( agent = "samus", script = "sound_ice_break", category = ACMD_SOUND)]
 unsafe fn sound_ice_break(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         macros::PLAY_SE(agent, Hash40::new("se_item_ice_crash"));

@@ -5,7 +5,7 @@ pub const ANGLE: u64 = 46;
 pub const KBG: i32 = 100;
 pub const BKB: i32 = 30;
 
-#[acmd_script( agent = "samus", script = "game_attackairf2", category = ACMD_GAME, low_priority )]
+#[acmd_script( agent = "samus", script = "game_attackairf2", category = ACMD_GAME)]
 unsafe fn game_attackairf(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         WorkModule::on_flag(agent.module_accessor, *FIGHTER_STATUS_ATTACK_AIR_FLAG_ENABLE_LANDING);
@@ -25,7 +25,7 @@ unsafe fn game_attackairf(agent: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", script = "game_attackairf2_break", category = ACMD_GAME, low_priority )]
+#[acmd_script( agent = "samus", script = "game_attackairf2_break", category = ACMD_GAME)]
 unsafe fn game_attackairf_break(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         AttackModule::set_power(agent.module_accessor, 0, DAMAGE-2.0, false);
@@ -33,7 +33,7 @@ unsafe fn game_attackairf_break(agent: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", script = "effect_attackairf2", category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", script = "effect_attackairf2", category = ACMD_EFFECT)]
 unsafe fn effect_attackairf(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 2.0);
     if macros::is_excute(agent) {
@@ -50,14 +50,14 @@ unsafe fn effect_attackairf(agent: &mut L2CAgentBase) {
         EFFECT_OFF_KIND(agent,Hash40::new("sys_ice"),false,false);
     }
 }
-#[acmd_script( agent = "samus", script = "sound_attackairf2", category = ACMD_SOUND, low_priority )]
+#[acmd_script( agent = "samus", script = "sound_attackairf2", category = ACMD_SOUND)]
 unsafe fn sound_attackairf(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 14.0);
     if macros::is_excute(agent) {
         macros::PLAY_SE(agent, Hash40::new("se_samus_swing_l"));
     }
 }
-#[acmd_script( agent = "samus", script = "expression_attackairf2", category = ACMD_EXPRESSION, low_priority )]
+#[acmd_script( agent = "samus", script = "expression_attackairf2", category = ACMD_EXPRESSION)]
 unsafe fn expression_attackairf(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 14.0);
     if macros::is_excute(agent) {

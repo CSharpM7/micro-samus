@@ -189,8 +189,7 @@ pub fn install() {
         squat_b_main,
         squat_wait_main,
 
-        bomb_pre,
-
+        //bomb_pre,
         speciallw_g_init,
         speciallw_g_exec,
         bomb_g_exec,

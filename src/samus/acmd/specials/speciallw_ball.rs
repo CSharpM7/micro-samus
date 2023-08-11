@@ -1,6 +1,6 @@
 use crate::imports::imports_acmd::*;
 
-#[acmd_script( agent = "samus", scripts = ["game_speciallw","game_specialairlw"], category = ACMD_GAME, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["game_speciallw","game_specialairlw"], category = ACMD_GAME)]
 unsafe fn game_speciallw(fighter: &mut L2CAgentBase) {
     if macros::is_excute(fighter) {
         //WorkModule::off_flag(fighter.module_accessor, *FIGHTER_SAMUS_STATUS_SPECIAL_LW_FLAG_JUMP);
@@ -33,7 +33,7 @@ unsafe fn game_speciallw(fighter: &mut L2CAgentBase) {
     //FT_MOTION_RATE(agent, 0.6);
 }
 
-#[acmd_script( agent = "samus", scripts = ["effect_speciallw","effect_specialairlw"], category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["effect_speciallw","effect_specialairlw"], category = ACMD_EFFECT)]
 unsafe fn effect_speciallw(fighter: &mut L2CAgentBase) {
     //frame(fighter.lua_state_agent, 4.0);
     if macros::is_excute(fighter) {
@@ -53,7 +53,7 @@ unsafe fn effect_speciallw(fighter: &mut L2CAgentBase) {
 
 }
 
-#[acmd_script( agent = "samus", scripts = ["sound_speciallw","sound_specialairlw"], category = ACMD_SOUND, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["sound_speciallw","sound_specialairlw"], category = ACMD_SOUND)]
 unsafe fn sound_speciallw(fighter: &mut L2CAgentBase) {
     //frame(fighter.lua_state_agent, 5.0);
     if macros::is_excute(fighter) {
@@ -61,7 +61,7 @@ unsafe fn sound_speciallw(fighter: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", scripts = ["expression_speciallw","expression_specialairlw"], category = ACMD_EXPRESSION, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["expression_speciallw","expression_specialairlw"], category = ACMD_EXPRESSION)]
 unsafe fn expression_speciallw(fighter: &mut L2CAgentBase) {
     if macros::is_excute(fighter) {
         slope!(fighter, *MA_MSC_CMD_SLOPE_SLOPE, *SLOPE_STATUS_LR);

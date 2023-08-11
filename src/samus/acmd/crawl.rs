@@ -1,6 +1,6 @@
 use crate::imports::imports_acmd::*;
 
-#[acmd_script( agent = "samus", scripts = ["game_squatf","game_squatb","game_squatn"], category = ACMD_GAME, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["game_squatf","game_squatb","game_squatn"], category = ACMD_GAME)]
 unsafe fn game_crawl(fighter: &mut L2CAgentBase) {
     if macros::is_excute(fighter) {
         VisibilityModule::set_int64(fighter.module_accessor, hash40("body") as i64, hash40("body_sphere") as i64);
@@ -14,7 +14,7 @@ unsafe fn game_crawl(fighter: &mut L2CAgentBase) {
     }*/
 }
 
-#[acmd_script( agent = "samus", scripts = ["effect_squatf","effect_squatb"], category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["effect_squatf","effect_squatb"], category = ACMD_EFFECT)]
 unsafe fn effect_crawl(fighter: &mut L2CAgentBase) {
     //frame(fighter.lua_state_agent, 4.0);
     if macros::is_excute(fighter) {
@@ -24,7 +24,7 @@ unsafe fn effect_crawl(fighter: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", scripts = ["sound_squatf","sound_squatb"], category = ACMD_SOUND, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["sound_squatf","sound_squatb"], category = ACMD_SOUND)]
 unsafe fn sound_crawl(fighter: &mut L2CAgentBase) {
     if macros::is_excute(fighter) {
         let prev = StatusModule::prev_status_kind(fighter.module_accessor, 0);
@@ -38,7 +38,7 @@ unsafe fn sound_crawl(fighter: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", scripts = ["expression_squatf","expression_squatb"], category = ACMD_EXPRESSION, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["expression_squatf","expression_squatb"], category = ACMD_EXPRESSION)]
 unsafe fn expression_crawl(fighter: &mut L2CAgentBase) {
     if macros::is_excute(fighter) {
         ItemModule::set_have_item_visibility(fighter.module_accessor, false, 0);
@@ -53,7 +53,7 @@ unsafe fn expression_crawl(fighter: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", script = "game_speciallw", category = ACMD_GAME, low_priority )]
+#[acmd_script( agent = "samus", script = "game_speciallw", category = ACMD_GAME)]
 unsafe fn game_speciallw(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         VisibilityModule::set_int64(agent.module_accessor, hash40("body") as i64, hash40("body_sphere") as i64);
@@ -72,7 +72,7 @@ unsafe fn game_speciallw(agent: &mut L2CAgentBase) {
         VisibilityModule::set_int64(agent.module_accessor, hash40("body") as i64, hash40("body_normal") as i64);
     }
 }
-#[acmd_script( agent = "samus", script = "effect_speciallw", category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", script = "effect_speciallw", category = ACMD_EFFECT)]
 unsafe fn effect_speciallw(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 4.0);
     if macros::is_excute(agent) {

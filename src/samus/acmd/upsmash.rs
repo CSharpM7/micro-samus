@@ -5,7 +5,7 @@ pub const ANGLE: u64 = 83;
 pub const KBG: i32 = 100;
 pub const BKB: i32 = 40;
 
-#[acmd_script( agent = "samus", script = "game_attackhi42", category = ACMD_GAME, low_priority )]
+#[acmd_script( agent = "samus", script = "game_attackhi42", category = ACMD_GAME)]
 unsafe fn game_attackhi4(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 7.0);
     if macros::is_excute(agent) {
@@ -26,7 +26,7 @@ unsafe fn game_attackhi4(agent: &mut L2CAgentBase) {
         AttackModule::clear_all(agent.module_accessor);
     }
 }
-#[acmd_script( agent = "samus", script = "game_attackhi42_break", category = ACMD_GAME, low_priority )]
+#[acmd_script( agent = "samus", script = "game_attackhi42_break", category = ACMD_GAME)]
 unsafe fn game_attackhi4_break(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         AttackModule::set_power(agent.module_accessor, 0, DAMAGE-2.0, false);
@@ -34,7 +34,7 @@ unsafe fn game_attackhi4_break(agent: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", script = "effect_attackhi42", category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", script = "effect_attackhi42", category = ACMD_EFFECT)]
 unsafe fn effect_attackhi4(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 1.5);
     if macros::is_excute(agent) {
@@ -71,7 +71,7 @@ unsafe fn effect_attackhi4(agent: &mut L2CAgentBase) {
 }
 
 
-#[acmd_script( agent = "samus", script = "sound_attackhi42", category = ACMD_SOUND, low_priority )]
+#[acmd_script( agent = "samus", script = "sound_attackhi42", category = ACMD_SOUND)]
 unsafe fn sound_attackhi4(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 5.0);
     if macros::is_excute(agent) {
@@ -88,7 +88,7 @@ unsafe fn sound_attackhi4(agent: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", script = "expression_attackhi42", category = ACMD_EXPRESSION, low_priority )]
+#[acmd_script( agent = "samus", script = "expression_attackhi42", category = ACMD_EXPRESSION)]
 unsafe fn expression_attackhi4(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 2.0);
     if macros::is_excute(agent) {
@@ -139,7 +139,7 @@ unsafe fn expression_attackhi4(agent: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", script = "sound_attackhi4charge2", category = ACMD_SOUND, low_priority )]
+#[acmd_script( agent = "samus", script = "sound_attackhi4charge2", category = ACMD_SOUND)]
 unsafe fn sound_attackhi4charge(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 2.0);
     if macros::is_excute(agent) {
@@ -148,7 +148,7 @@ unsafe fn sound_attackhi4charge(agent: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", script = "effect_attackhi4charge2", category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", script = "effect_attackhi4charge2", category = ACMD_EFFECT)]
 unsafe fn effect_attackhi4charge(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 5.0);
     for i in 1..i32::MAX{
@@ -172,7 +172,7 @@ unsafe fn effect_attackhi4charge(agent: &mut L2CAgentBase) {
         }
     }
 }
-#[acmd_script( agent = "samus", script = "expression_attackhi4charge2", category = ACMD_EXPRESSION, low_priority )]
+#[acmd_script( agent = "samus", script = "expression_attackhi4charge2", category = ACMD_EXPRESSION)]
 unsafe fn expression_attackhi4charge(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         VisibilityModule::set_int64(agent.module_accessor, hash40("body") as i64, hash40("body_hide_gun") as i64);

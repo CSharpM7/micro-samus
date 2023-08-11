@@ -32,6 +32,11 @@ unsafe fn special_lw_pre(fighter: &mut L2CFighterCommon) -> L2CValue {
     
     let is_ice = VarModule::is_flag(fighter.battle_object, samus::instance::flag::ICE_MODE);
     VarModule::set_flag(fighter.battle_object, samus::instance::flag::ICE_MODE, !is_ice);
+    
+    WorkModule::set_int(fighter.module_accessor, 0, *FIGHTER_SAMUS_INSTANCE_WORK_ID_INT_SPECIAL_N_COUNT);
+    EffectModule::remove_common(fighter.module_accessor, Hash40::new("charge_max"));
+    let eff_max = WorkModule::get_int(fighter.module_accessor, *FIGHTER_SAMUS_INSTANCE_WORK_ID_INT_EFH_CHARGE_MAX);
+    effect!(fighter, MA_MSC_EFFECT_REMOVE, eff_max, 1);
 
     return 0.into();
 }

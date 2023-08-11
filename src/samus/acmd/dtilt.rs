@@ -6,7 +6,7 @@ pub const KBG: i32 = 50;
 pub const BKB: i32 = 80;
 pub const SIZE: f32 = 5.8;
 
-#[acmd_script( agent = "samus", script = "game_attacklw32", category = ACMD_GAME, low_priority )]
+#[acmd_script( agent = "samus", script = "game_attacklw32", category = ACMD_GAME)]
 unsafe fn game_attacklw3(agent: &mut L2CAgentBase) {
 
     frame(agent.lua_state_agent, 6.0);
@@ -21,7 +21,7 @@ unsafe fn game_attacklw3(agent: &mut L2CAgentBase) {
             macros::ATTACK(agent, 0, 0, Hash40::new("top"), 8.0, ANGLE, KBG, 0, BKB, SIZE, 0.0, 1.6, 14.4, None, None, None, 0.75, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_POS, false, 0, 0.4, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_normal"), *ATTACK_SOUND_LEVEL_M, *COLLISION_SOUND_ATTR_FREEZE, *ATTACK_REGION_BOMB);
         }
     }
-    wait(agent.lua_state_agent, 2.0);
+    wait(agent.lua_state_agent, 4.0);
     if macros::is_excute(agent) {
         AttackModule::clear(agent.module_accessor, 1, false);
         if VarModule::is_flag(agent.battle_object, samus::status::flag::ATTACK_LW3_ICE_PILLAR) {
@@ -31,7 +31,7 @@ unsafe fn game_attacklw3(agent: &mut L2CAgentBase) {
             AttackModule::clear(agent.module_accessor, 0, false);
         }
     }
-    wait(agent.lua_state_agent, 3.0);
+    wait(agent.lua_state_agent, 1.0);
     if macros::is_excute(agent) {
         if VarModule::is_flag(agent.battle_object, samus::status::flag::ATTACK_LW3_ICE_PILLAR) {
             macros::ATTACK(agent, 0, 0, Hash40::new("throw"), 8.0, 90, KBG, 0, 40, SIZE, 0.0, 0.0, 0.0, None, None, None, 0.5, 1.0, *ATTACK_SETOFF_KIND_THRU, *ATTACK_LR_CHECK_POS, false, 0, 0.4, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_normal"), *ATTACK_SOUND_LEVEL_S, *COLLISION_SOUND_ATTR_KICK, *ATTACK_REGION_BOMB);
@@ -43,7 +43,7 @@ unsafe fn game_attacklw3(agent: &mut L2CAgentBase) {
     }
     frame(agent.lua_state_agent, 12.0);
     FT_MOTION_RATE_RANGE(agent,12.0,20.0,21.0);
-    frame(agent.lua_state_agent, 14.0);
+    frame(agent.lua_state_agent, 12.0);
     if macros::is_excute(agent) {
         AttackModule::clear_all(agent.module_accessor);
     }
@@ -51,7 +51,7 @@ unsafe fn game_attacklw3(agent: &mut L2CAgentBase) {
     FT_MOTION_RATE(agent,1.0);
 }
 
-#[acmd_script( agent = "samus", script = "effect_attacklw32", category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", script = "effect_attacklw32", category = ACMD_EFFECT)]
 unsafe fn effect_attacklw3(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         macros::FOOT_EFFECT(agent, Hash40::new("null"), Hash40::new("top"), 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, false);
@@ -95,7 +95,7 @@ unsafe fn effect_attacklw3(agent: &mut L2CAgentBase) {
         }
     }
 }
-#[acmd_script( agent = "samus", script = "effect_attacklw32end", category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", script = "effect_attacklw32end", category = ACMD_EFFECT)]
 unsafe fn effect_attacklw3_end(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         EFFECT_OFF_KIND(agent,Hash40::new("sys_ice"),false,false);
@@ -106,7 +106,7 @@ unsafe fn effect_attacklw3_end(agent: &mut L2CAgentBase) {
 }
 
 
-#[acmd_script( agent = "samus", script = "sound_attacklw32", category = ACMD_SOUND, low_priority )]
+#[acmd_script( agent = "samus", script = "sound_attacklw32", category = ACMD_SOUND)]
 unsafe fn sound_attacklw3(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 6.0);
     if macros::is_excute(agent) {
@@ -114,7 +114,7 @@ unsafe fn sound_attacklw3(agent: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", script = "expression_attacklw32", category = ACMD_EXPRESSION, low_priority )]
+#[acmd_script( agent = "samus", script = "expression_attacklw32", category = ACMD_EXPRESSION)]
 unsafe fn expression_attacklw3(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         slope!(agent, *MA_MSC_CMD_SLOPE_SLOPE, *SLOPE_STATUS_LR);

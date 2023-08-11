@@ -1,12 +1,12 @@
 use crate::imports::imports_acmd::*;
 
-#[acmd_script( agent = "samus", scripts = ["game_speciallwl","game_specialairlwl","game_speciallwr","game_specialairlwr"], category = ACMD_GAME, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["game_speciallwl","game_specialairlwl","game_speciallwr","game_specialairlwr"], category = ACMD_GAME)]
 unsafe fn game_speciallw(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 1.0);
     FT_MOTION_RATE(agent,0.425);
 }
 
-#[acmd_script( agent = "samus", scripts = ["effect_speciallwl","effect_specialairlwl","effect_speciallwr","effect_specialairlwr"], category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["effect_speciallwl","effect_specialairlwl","effect_speciallwr","effect_specialairlwr"], category = ACMD_EFFECT)]
 unsafe fn effect_speciallw(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 13.0);
     let is_ice = VarModule::is_flag(agent.battle_object, samus::instance::flag::ICE_MODE);
@@ -33,7 +33,7 @@ unsafe fn effect_speciallw(agent: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", scripts = ["sound_speciallwl","sound_specialairlwl","sound_speciallwr","sound_specialairlwr"], category = ACMD_SOUND, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["sound_speciallwl","sound_specialairlwl","sound_speciallwr","sound_specialairlwr"], category = ACMD_SOUND)]
 unsafe fn sound_speciallw(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 18.0);
     if macros::is_excute(agent) {
@@ -57,7 +57,7 @@ unsafe fn sound_speciallw(agent: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", scripts = ["expression_speciallwl","expression_specialairlwl","expression_speciallwr","expression_specialairlwr"], category = ACMD_EXPRESSION, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["expression_speciallwl","expression_specialairlwl","expression_speciallwr","expression_specialairlwr"], category = ACMD_EXPRESSION)]
 unsafe fn expression_speciallw(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         slope!(agent, *MA_MSC_CMD_SLOPE_SLOPE, *SLOPE_STATUS_LR);
