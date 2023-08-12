@@ -2,7 +2,7 @@ use crate::imports::imports_agent::*;
 
 unsafe extern "C" fn change_status_callback(fighter: &mut L2CFighterCommon) -> L2CValue {
     let boma = fighter.module_accessor;
-
+    let current_status = StatusModule::status_kind(boma);
     super::suit_effect(boma, fighter.battle_object);
     if is_damage_status(boma){
         EFFECT_OFF_KIND(fighter,Hash40::new("sys_ice"),false,false);
@@ -10,6 +10,13 @@ unsafe extern "C" fn change_status_callback(fighter: &mut L2CFighterCommon) -> L
             //MotionAnimcmdModule::call_script_single(fighter.module_accessor, *FIGHTER_ANIMCMD_SOUND, Hash40::new("sound_ice_break"), -1);
             VarModule::off_flag(fighter.battle_object, samus::status::flag::ATTACK_HAS_ICE);
         }
+    }
+    if ![
+        *FIGHTER_STATUS_KIND_SQUAT_F,*FIGHTER_STATUS_KIND_SQUAT_B,*FIGHTER_STATUS_KIND_SQUAT_WAIT,
+    *FIGHTER_SAMUS_STATUS_KIND_BOMB_JUMP,*FIGHTER_SAMUS_STATUS_KIND_BOMB_JUMP_A,*FIGHTER_SAMUS_STATUS_KIND_BOMB_JUMP_G,
+    *FIGHTER_STATUS_KIND_SPECIAL_LW,*FIGHTER_SAMUS_STATUS_KIND_SPECIAL_GROUND_LW,
+    ].contains(&current_status){
+        VarModule::off_flag(fighter.battle_object, samus::instance::flag::SPECIAL_LW_CRAWL);
     }
     true.into()
 }

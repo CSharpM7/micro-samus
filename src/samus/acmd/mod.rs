@@ -4,6 +4,7 @@ mod dtilt;
 mod fsmash;
 mod fair;
 mod upsmash;
+mod upthrow;
 mod sidetaunt;
 mod ice;
 
@@ -14,6 +15,7 @@ pub fn install() {
     fsmash::install();
     fair::install();
     upsmash::install();
+    upthrow::install();
     sidetaunt::install();
     ice::install();
 }

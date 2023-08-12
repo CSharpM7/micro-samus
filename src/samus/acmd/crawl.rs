@@ -5,13 +5,6 @@ unsafe fn game_crawl(fighter: &mut L2CAgentBase) {
     if macros::is_excute(fighter) {
         VisibilityModule::set_int64(fighter.module_accessor, hash40("body") as i64, hash40("body_sphere") as i64);
     }
-    /* 
-    for i in 1..i32::MAX{
-        if macros::is_excute(fighter) {
-            VisibilityModule::set_int64(fighter.module_accessor, hash40("body") as i64, hash40("body_sphere") as i64);
-        }
-        wait(fighter.lua_state_agent, 1.0);
-    }*/
 }
 
 #[acmd_script( agent = "samus", scripts = ["effect_squatf","effect_squatb"], category = ACMD_EFFECT)]
@@ -26,6 +19,7 @@ unsafe fn effect_crawl(fighter: &mut L2CAgentBase) {
 
 #[acmd_script( agent = "samus", scripts = ["sound_squatf","sound_squatb"], category = ACMD_SOUND)]
 unsafe fn sound_crawl(fighter: &mut L2CAgentBase) {
+    /*
     if macros::is_excute(fighter) {
         let prev = StatusModule::prev_status_kind(fighter.module_accessor, 0);
         if ![
@@ -35,7 +29,7 @@ unsafe fn sound_crawl(fighter: &mut L2CAgentBase) {
         ].contains(&prev){
             macros::PLAY_SE(fighter, Hash40::new("se_samus_escape_ex"));
         }
-    }
+    } */
 }
 
 #[acmd_script( agent = "samus", scripts = ["expression_squatf","expression_squatb"], category = ACMD_EXPRESSION)]

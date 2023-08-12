@@ -52,6 +52,10 @@ unsafe fn effect_attackairf(agent: &mut L2CAgentBase) {
 }
 #[acmd_script( agent = "samus", script = "sound_attackairf2", category = ACMD_SOUND)]
 unsafe fn sound_attackairf(agent: &mut L2CAgentBase) {
+    frame(agent.lua_state_agent, 12.0);
+    if macros::is_excute(agent) {
+        macros::PLAY_SE(agent, Hash40::new("se_common_swing_09"));
+    }
     frame(agent.lua_state_agent, 14.0);
     if macros::is_excute(agent) {
         macros::PLAY_SE(agent, Hash40::new("se_samus_swing_l"));

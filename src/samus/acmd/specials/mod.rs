@@ -1,11 +1,11 @@
 mod speciallw_ball;
 mod speciallw;
 mod specialn;
-mod missile;
+mod missiles;
 
 pub fn install() {
     specialn::install();
     speciallw::install();
-    missile::install();
+    missiles::install();
     //speciallw_ball::install();
 }

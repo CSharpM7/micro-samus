@@ -2,6 +2,10 @@ use crate::imports::imports_agent::*;
 
 #[status_script(agent = "samus", status = FIGHTER_STATUS_KIND_SPECIAL_LW, condition = LUA_SCRIPT_STATUS_FUNC_STATUS_PRE)]
 unsafe fn special_lw_pre(fighter: &mut L2CFighterCommon) -> L2CValue {
+    if VarModule::is_flag(fighter.battle_object, samus::instance::flag::SPECIAL_LW_CRAWL) {
+        println!("Crawl bomb");
+        return original!(fighter);
+    }
     WorkModule::on_flag(fighter.module_accessor, *FIGHTER_SAMUS_INSTANCE_WORK_ID_FLAG_ST_INIT);
 
     StatusModule::init_settings(
@@ -43,6 +47,9 @@ unsafe fn special_lw_pre(fighter: &mut L2CFighterCommon) -> L2CValue {
 
 #[status_script(agent = "samus", status = FIGHTER_STATUS_KIND_SPECIAL_LW, condition = LUA_SCRIPT_STATUS_FUNC_STATUS_MAIN)]
 unsafe fn special_lw_main(fighter: &mut L2CFighterCommon) -> L2CValue {
+    if VarModule::is_flag(fighter.battle_object, samus::instance::flag::SPECIAL_LW_CRAWL) {
+        return original!(fighter);
+    }
     let motion_g = if PostureModule::lr(fighter.module_accessor) < 0.0 {Hash40::new("special_lw_l")} else {Hash40::new("special_lw_r")};
     let motion_a = if PostureModule::lr(fighter.module_accessor) < 0.0 {Hash40::new("special_air_lw_l")} else {Hash40::new("special_lw_r")};
     let motion = if fighter.is_situation(*SITUATION_KIND_GROUND) {motion_g} else {motion_a};
@@ -92,6 +99,9 @@ unsafe extern "C" fn speciallw_main_loop(fighter: &mut L2CFighterCommon) -> L2CV
 }
 #[status_script(agent = "samus", status = FIGHTER_STATUS_KIND_SPECIAL_LW, condition = LUA_SCRIPT_STATUS_FUNC_ON_CHANGE_LR)]
 unsafe fn special_lw_lr(fighter: &mut L2CFighterCommon) -> L2CValue {
+    if VarModule::is_flag(fighter.battle_object, samus::instance::flag::SPECIAL_LW_CRAWL) {
+        return 0.into();
+    }
     let motion_g = if PostureModule::lr(fighter.module_accessor) < 0.0 {Hash40::new("special_lw_l")} else {Hash40::new("special_lw_r")};
     let motion_a = if PostureModule::lr(fighter.module_accessor) < 0.0 {Hash40::new("special_air_lw_l")} else {Hash40::new("special_lw_r")};
     fighter.sub_change_motion_by_situation(motion_g.into(), motion_a.into(), true.into());

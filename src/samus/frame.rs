@@ -192,15 +192,27 @@ fn global_fighter_frame(fighter: &mut L2CFighterCommon) {
         }
     }
 }
+#[smashline::weapon_frame_callback]
+pub fn missile_callback(weapon: &mut smash::lua2cpp::L2CFighterBase) {
+    unsafe { 
+        if weapon.kind() != WEAPON_KIND_SAMUS_MISSILE {
+            return
+        }
+        let status = StatusModule::status_kind(weapon.module_accessor);
+        let homing = *WEAPON_SAMUS_MISSILE_STATUS_KIND_HOMING;
+        println!("Status: {status} Homing: {homing}");
+    }
+}
 
 pub fn install() {
     /* 
     #[cfg(feature = "dev")]
     smashline::install_agent_frame_callbacks!(
       global_fighter_frame
-    );*/
+    );
 
     smashline::install_agent_frames!(
         samus_frame
-    );
+    );*/
+    //smashline::install_agent_frame_callback!(missile_callback);
 }

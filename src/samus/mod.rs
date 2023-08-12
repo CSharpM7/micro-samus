@@ -8,7 +8,6 @@ pub fn install() {
     acmd::install();
     status::install();
     agent::install();
-    #[cfg(not(feature = "dev"))]
     frame::install();
 }
 

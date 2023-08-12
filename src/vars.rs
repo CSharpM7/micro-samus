@@ -6,9 +6,10 @@ pub mod samus {
     pub const BOMB_COOLDOWN_MAX: i32 = 45;
     pub mod instance {
         pub mod flag {
-            pub const SPECIAL_LW_CAN_EXIT: i32 = 0x0100;
-            pub const SPECIAL_LW_EXIT: i32 = 0x0101;
-            pub const ICE_MODE: i32 = 0x0102;
+            pub const ICE_MODE: i32 = 0x0100;
+            pub const SPECIAL_LW_CRAWL: i32 = 0x0101;
+            pub const SPECIAL_LW_CAN_EXIT: i32 = 0x0102;
+            pub const SPECIAL_LW_EXIT: i32 = 0x0103;
         }
         pub mod int {
             pub const SPECIAL_LW_ROTATIONS: i32 = 0x0100;

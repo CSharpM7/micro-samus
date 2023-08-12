@@ -32,18 +32,17 @@ pub unsafe extern "C" fn squat_disable_terms(fighter: &mut L2CFighterCommon) {
 
 pub unsafe extern "C" fn check_bomb_input(fighter: &mut L2CFighterCommon) {
     let can_spawn = VarModule::get_int(fighter.battle_object, samus::instance::int::BOMB_COOLDOWN) <= 0;
-    if ControlModule::check_button_trigger(fighter.module_accessor, *CONTROL_PAD_BUTTON_ATTACK_RAW) {
+    if ControlModule::check_button_trigger(fighter.module_accessor, *CONTROL_PAD_BUTTON_ATTACK_RAW)
+    || ControlModule::check_button_trigger(fighter.module_accessor, *CONTROL_PAD_BUTTON_SPECIAL_RAW) {
         let cooldown = VarModule::get_int(fighter.battle_object, samus::instance::int::BOMB_COOLDOWN);
+        println!("Cooldown: {cooldown}");
         ControlModule::clear_command(fighter.module_accessor, false);
         let article = *FIGHTER_SAMUS_GENERATE_ARTICLE_BOMB;
         let maxbomb = WorkModule::get_param_int(fighter.module_accessor, hash40("param_special_lw"),hash40("bomb_max_req"));
-        if (ArticleModule::get_active_num(fighter.module_accessor, article) as i32) < maxbomb && can_spawn {
-            //ArticleModule::generate_article_enable(fighter.module_accessor, article, false, -1);
-            //ArticleModule::shoot_exist(fighter.module_accessor, article, ArticleOperationTarget(*ARTICLE_OPE_TARGET_ALL), false);
-            //VarModule::set_int(fighter.battle_object, samus::instance::int::BOMB_COOLDOWN, samus::BOMB_COOLDOWN_MAX);
-            
-            fighter.change_status(FIGHTER_SAMUS_STATUS_KIND_SPECIAL_GROUND_LW.into(), false.into());
-            //fighter.change_status(FIGHTER_SAMUS_STATUS_KIND_BOMB_JUMP.into(), false.into());
+        if (ArticleModule::get_active_num(fighter.module_accessor, article) as i32) < maxbomb 
+        && can_spawn 
+        {
+            fighter.change_status(FIGHTER_STATUS_KIND_SPECIAL_LW.into(), false.into());
         }
     }
 }
