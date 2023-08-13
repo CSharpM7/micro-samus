@@ -111,8 +111,6 @@ unsafe fn expression_throwhi(agent: &mut L2CAgentBase) {
         if is_ice {
             LinkModule::send_event_nodes(agent.module_accessor, *LINK_NO_ARTICLE, Hash40::new_raw(0x1c5609e30f), 0);
         }
-
-        LinkModule::send_event_nodes(agent.module_accessor, *LINK_NO_ARTICLE, Hash40::new_raw(0x1c5609e30f), 0);
     }
     frame(agent.lua_state_agent, THROW_FRAME);
     if macros::is_excute(agent) {

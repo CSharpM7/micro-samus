@@ -12,7 +12,7 @@ unsafe fn attacklw3_main(fighter: &mut L2CFighterCommon) -> L2CValue {
     let lr = PostureModule::lr(fighter.module_accessor);
     let nearGround = GroundModule::ray_check(
         fighter.module_accessor, 
-        &smash::phx::Vector2f{ x: PostureModule::pos_x(fighter.module_accessor) + (14.5 * lr), y: PostureModule::pos_y(fighter.module_accessor)}, 
+        &smash::phx::Vector2f{ x: PostureModule::pos_x(fighter.module_accessor) + (16.0 * lr), y: PostureModule::pos_y(fighter.module_accessor)}, 
         &Vector2f{ x: 0.0, y: -2.0}, true
     ) == 1;
     println!("Near Ground: {nearGround}");

@@ -3209,7 +3209,7 @@ list:
     extra:
       xlu_start: 0
       xlu_end: 0
-      cancel_frame: 32
+      cancel_frame: 42
       no_stop_intp: false
   special_n_i_max:
     game_script: game_specialnicemax

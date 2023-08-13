@@ -59,16 +59,20 @@ unsafe fn sound_speciallw(agent: &mut L2CAgentBase) {
 
 #[acmd_script( agent = "samus", scripts = ["expression_speciallwl","expression_specialairlwl","expression_speciallwr","expression_specialairlwr"], category = ACMD_EXPRESSION)]
 unsafe fn expression_speciallw(agent: &mut L2CAgentBase) {
+    let mut is_ice = false;
     if macros::is_excute(agent) {
+        is_ice = VarModule::is_flag(agent.battle_object, samus::instance::flag::ICE_MODE);
         slope!(agent, *MA_MSC_CMD_SLOPE_SLOPE, *SLOPE_STATUS_LR);
         VisibilityModule::set_int64(agent.module_accessor, hash40("body") as i64, hash40("body_hide_gun") as i64);
         ArticleModule::remove_exist(agent.module_accessor, *FIGHTER_SAMUS_GENERATE_ARTICLE_GUN, ArticleOperationTarget(*ARTICLE_OPE_TARGET_ALL));
         ArticleModule::generate_article(agent.module_accessor, *FIGHTER_SAMUS_GENERATE_ARTICLE_GUN, true, -1);
         ArticleModule::change_motion(agent.module_accessor, *FIGHTER_SAMUS_GENERATE_ARTICLE_GUN, Hash40::new("appeal_sl"), false, -1.0);
         ArticleModule::set_rate(agent.module_accessor, *FIGHTER_SAMUS_GENERATE_ARTICLE_GUN, 2.25);
+        if is_ice {
+            LinkModule::send_event_nodes(agent.module_accessor, *LINK_NO_ARTICLE, Hash40::new_raw(0x1c5609e30f), 0);
+        }
     }
     frame(agent.lua_state_agent, 36.0);
-    let is_ice = VarModule::is_flag(agent.battle_object, samus::instance::flag::ICE_MODE);
     if macros::is_excute(agent) {
         let rumble = if is_ice {Hash40::new("rbkind_15_iceberg_sp")} else {Hash40::new("rbkind_elecattacks")};
         ControlModule::set_rumble(agent.module_accessor, rumble, 40, true, *BATTLE_OBJECT_ID_INVALID as u32);

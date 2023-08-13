@@ -15,7 +15,10 @@ use crate::imports::imports_agent::*;
 pub unsafe fn suit_effect(boma: *mut BattleObjectModuleAccessor, battle_object: *mut BattleObject) {
     let is_ice = VarModule::is_flag(battle_object, samus::instance::flag::ICE_MODE);
     if is_ice {
-        MotionModule::add_motion_partial(boma, *FIGHTER_SAMUS_MOTION_PART_SET_KIND_VISOR, Hash40::new("visor"), 0.0,1.0, false, false, 0.0, true, true, false); 
+        let motion_kind_partial = MotionModule::motion_kind_partial(boma, *FIGHTER_SAMUS_MOTION_PART_SET_KIND_VISOR);
+        if motion_kind_partial == hash40("invalid") {
+            MotionModule::add_motion_partial(boma, *FIGHTER_SAMUS_MOTION_PART_SET_KIND_VISOR, Hash40::new("visor"), 10.0,0.0, false, false, 0.0, true, true, false); 
+        }
         if ArticleModule::is_exist(boma, *FIGHTER_SAMUS_GENERATE_ARTICLE_GUN) {
             LinkModule::send_event_nodes(boma, *LINK_NO_ARTICLE, Hash40::new_raw(0x1c5609e30f), 0);
         }

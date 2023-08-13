@@ -152,12 +152,25 @@ unsafe fn specials_force_weapon(boma: &mut BattleObjectModuleAccessor, battle_ob
 
 
 unsafe fn samus_update(fighter: &mut L2CFighterCommon) {
+    let boma = fighter.module_accessor;
+    VarModule::countdown_int(fighter.battle_object, samus::instance::int::BOMB_COOLDOWN, 0);
+    let status_kind = StatusModule::status_kind(boma);
+    let situation_kind = StatusModule::situation_kind(boma);
+    let frame = MotionModule::frame(boma);
+    let lr = PostureModule::lr(boma);
+
+    let fx_fix_rate = 15.0;
+    let modulo = frame % fx_fix_rate;
+    if modulo < 1.0 {
+        super::suit_effect(boma,fighter.battle_object);
+    }
+    /* 
     if let Some(info) = FighterInfo::get_common(fighter) {
         let boma = &mut *info.boma;
 
         VarModule::countdown_int(fighter.battle_object, samus::instance::int::BOMB_COOLDOWN, 0);
         
-        super::suit_effect(fighter.module_accessor, fighter.battle_object);
+        //super::suit_effect(fighter.module_accessor, fighter.battle_object);
         //morphball_moveset(fighter,boma,info.status_kind,info.situation_kind,info.lr,info.frame);
         specials_force_weapon(boma,fighter.battle_object,info.status_kind,info.situation_kind,info.frame);
         if (&[
@@ -172,7 +185,7 @@ unsafe fn samus_update(fighter: &mut L2CFighterCommon) {
             //println!("Force crawl");
             //StatusModule::change_status_force(boma, FIGHTER_SAMUS_STATUS_KIND_SPECIAL_GROUND_LW.into(), false.into());
         }
-    }
+    }*/
 }
 
 #[fighter_frame( agent = FIGHTER_KIND_SAMUS )]
@@ -205,12 +218,11 @@ pub fn missile_callback(weapon: &mut smash::lua2cpp::L2CFighterBase) {
 }
 
 pub fn install() {
-    /* 
     #[cfg(feature = "dev")]
     smashline::install_agent_frame_callbacks!(
       global_fighter_frame
     );
-
+    /*
     smashline::install_agent_frames!(
         samus_frame
     );*/

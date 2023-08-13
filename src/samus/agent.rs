@@ -3,7 +3,6 @@ use crate::imports::imports_agent::*;
 unsafe extern "C" fn change_status_callback(fighter: &mut L2CFighterCommon) -> L2CValue {
     let boma = fighter.module_accessor;
     let current_status = StatusModule::status_kind(boma);
-    super::suit_effect(boma, fighter.battle_object);
     if is_damage_status(boma){
         EFFECT_OFF_KIND(fighter,Hash40::new("sys_ice"),false,false);
         if VarModule::is_flag(fighter.battle_object, samus::status::flag::ATTACK_HAS_ICE){
@@ -22,7 +21,7 @@ unsafe extern "C" fn change_status_callback(fighter: &mut L2CFighterCommon) -> L
 }
 
 pub unsafe fn agent_rebirth(fighter: &mut L2CFighterCommon){
-    
+    super::suit_effect(fighter.module_accessor, fighter.battle_object);
 }
 
 #[status_script(agent = "samus", status = FIGHTER_STATUS_KIND_REBIRTH, condition = LUA_SCRIPT_STATUS_FUNC_STATUS_PRE)]

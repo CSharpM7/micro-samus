@@ -1,0 +1,27 @@
+#SBAnimation Version 1
+FrameCount 91
+material met_gun_002 CustomVector0
+{
+0 : (1, 0, 0, 0)
+}
+material met_gun_002 CustomVector13
+{
+0 : (1, 1, 1, 1)
+}
+material met_gun_002 CustomVector14
+{
+0 : (0.75, 0.75, 0.75, 1)
+}
+material met_gun_002 CustomVector3
+{
+0 : (1, 1, 1, 1)
+}
+material met_gun_002 CustomVector6
+{
+0 : (1, 1, 0, 0)
+1 : (1, 1, 0, 0.5)
+}
+material met_gun_002 CustomVector8
+{
+0 : (1, 1, 1, 1)
+}

@@ -82,7 +82,11 @@ unsafe fn game_specialnice(agent: &mut L2CAgentBase) {
 unsafe fn effect_specialnice(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 3.0);
     if macros::is_excute(agent) {
-        macros::EFFECT(agent, Hash40::new("samus_cshot_shot"), Hash40::new("top"), 6, 6, 0, 0, 0, 0, 0.9, 0, 0, 0, 0, 0, 0, false);
+        //macros::EFFECT(agent, Hash40::new("samus_cshot_shot"), Hash40::new("top"), 6, 6, 0, 0, 0, 0, 0.9, 0, 0, 0, 0, 0, 0, false);
+        EFFECT(agent, Hash40::new("sys_muzzleflash"), Hash40::new("armr"), 7.9, 0.0, 0.0, 0, 0, 0, 2.5, 0, 0, 0, 0, 0, 0, false);
+        LAST_EFFECT_SET_COLOR(agent,0.25, 0.875,1.0);
+        LAST_EFFECT_SET_RATE(agent,0.75);
+        LAST_EFFECT_SET_SCALE_W(agent,1.5,3.0,1.5);
     }
     frame(agent.lua_state_agent, 4.0);
     if macros::is_excute(agent) {

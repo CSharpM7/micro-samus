@@ -1,6 +1,7 @@
 use crate::imports::imports_agent::*;
 use crate::samus::*;
 
+/* 
 #[status_script(agent = "samus", status = FIGHTER_SAMUS_STATUS_KIND_SPECIAL_N_H, condition = LUA_SCRIPT_STATUS_FUNC_STATUS_MAIN)]
 unsafe fn special_n_main(fighter: &mut L2CFighterCommon) -> L2CValue {
     if !is_ice(fighter){
@@ -14,7 +15,6 @@ unsafe fn special_n_main(fighter: &mut L2CFighterCommon) -> L2CValue {
 
     let motion = if fighter.is_situation(*SITUATION_KIND_GROUND) {Hash40::new("special_n_r")} else {Hash40::new("special_air_n_r")};
     MotionModule::change_motion(fighter.module_accessor, motion, 0.0, 1.0, false, 0.0, false, false);
-    /* 
     WorkModule::enable_transition_term(fighter.module_accessor, *FIGHTER_STATUS_TRANSITION_TERM_ID_CONT_JUMP_SQUAT_BUTTON);
     WorkModule::enable_transition_term(fighter.module_accessor, *FIGHTER_STATUS_TRANSITION_TERM_ID_CONT_JUMP_SQUAT);
     WorkModule::enable_transition_term(fighter.module_accessor, *FIGHTER_STATUS_TRANSITION_TERM_ID_CONT_JUMP_AERIAL_BUTTON);
@@ -27,7 +27,6 @@ unsafe fn special_n_main(fighter: &mut L2CFighterCommon) -> L2CValue {
     WorkModule::enable_transition_term(fighter.module_accessor, *FIGHTER_STATUS_TRANSITION_TERM_ID_CONT_ESCAPE_F);
     WorkModule::enable_transition_term(fighter.module_accessor, *FIGHTER_STATUS_TRANSITION_TERM_ID_CONT_ESCAPE_B);
     WorkModule::enable_transition_term(fighter.module_accessor, *FIGHTER_STATUS_TRANSITION_TERM_ID_CONT_ESCAPE_AIR);
-    */
     //ControlModule::set_add_jump_mini_button_life(fighter.module_accessor, 8);
 
     special_n_shot_change(fighter);
@@ -68,27 +67,24 @@ unsafe extern "C" fn special_n_main_loop(fighter: &mut L2CFighterCommon) -> L2CV
         }
     }
     
-    /* 
     if ControlModule::check_button_trigger(fighter.module_accessor, *FIGHTER_PAD_FLAG_SPECIAL_TRIGGER)
     || ControlModule::check_button_trigger(fighter.module_accessor, *FIGHTER_PAD_FLAG_ATTACK_TRIGGER) {
         let motion = if fighter.is_situation(*SITUATION_KIND_GROUND) {Hash40::new("special_n_f")} else {Hash40::new("special_air_n_f")};
         MotionModule::change_motion(fighter.module_accessor, motion, 0.0, 1.0, false, 0.0, false, false);
         fighter.change_status(FIGHTER_SAMUS_STATUS_KIND_SPECIAL_N_F.into(),true.into());
     }
-    */
     //This is the part where you do is_enable_transition_term on everything
-    /* 
     if WorkModule::is_enable_transition_term(fighter.module_accessor, FIGHTER_STATUS_TRANSITION_TERM_ID_CONT_JUMP_AERIAL_BUTTON){
         WorkModule::set_int(fighter.module_accessor, *FIGHTER_SAMUS_SPECIAL_N_CANCEL_TYPE_AIR_JUMP_AERIAL, *FIGHTER_SAMUS_STATUS_SPECIAL_N_WORK_INT_CANCEL_TYPE);
         fighter.change_status(FIGHTER_SAMUS_STATUS_KIND_SPECIAL_N_JUMP_CANCEL.into(),true.into());
         //FIGHTER_SAMUS_STATUS_KIND_SPECIAL_N_C for not JC
     }
-    */
     WorkModule::set_int(fighter.module_accessor, *FIGHTER_SAMUS_SPECIAL_N_CANCEL_TYPE_NONE, *FIGHTER_SAMUS_STATUS_SPECIAL_N_WORK_INT_CANCEL_TYPE);
     
     0.into()
 }
 
+    */
 #[status_script(agent = "samus", status = FIGHTER_SAMUS_STATUS_KIND_SPECIAL_N_F, condition = LUA_SCRIPT_STATUS_FUNC_STATUS_MAIN)]
 unsafe fn special_n_f_main(fighter: &mut L2CFighterCommon) -> L2CValue {
     if !is_ice(fighter){

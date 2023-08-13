@@ -9,6 +9,7 @@ unsafe fn missile_homing_init(weapon: &mut L2CWeaponCommon) -> L2CValue {
 		let samus = get_owner_boma(weapon);
         let samus_status = StatusModule::status_kind(samus);
         if samus_status == *FIGHTER_STATUS_KIND_THROW {
+            println!("Throw");
             PostureModule::set_rot(weapon.module_accessor,
             &Vector3f{x:-90.90,y:0.0,z:0.0},
             0
