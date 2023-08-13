@@ -56,8 +56,8 @@ unsafe fn missile_homing_exec(weapon: &mut L2CWeaponCommon) -> L2CValue {
         macros::EFFECT_OFF_KIND(weapon, Hash40::new("samusd_missile_homing"), false, true);
     }
     //let rot_x = PostureModule::rot_x(weapon.module_accessor, 0);
-            let rot_x = WorkModule::get_float(weapon.module_accessor, *WEAPON_SAMUS_MISSILE_INSTANCE_WORK_ID_FLOAT_ROT);
-    if rot_x >= 0.0  {
+    let rot_x = WorkModule::get_float(weapon.module_accessor, *WEAPON_SAMUS_MISSILE_INSTANCE_WORK_ID_FLOAT_ROT);
+    if rot_x >= -89.0  {
         return original!(weapon);
     }
     WorkModule::set_float(weapon.module_accessor, -90.0,*WEAPON_SAMUS_MISSILE_INSTANCE_WORK_ID_FLOAT_ROT);
@@ -68,12 +68,12 @@ unsafe fn missile_homing_exec(weapon: &mut L2CWeaponCommon) -> L2CValue {
 unsafe fn missile_homing_main(weapon: &mut L2CWeaponCommon) -> L2CValue {
     //let rot_x = PostureModule::rot_x(weapon.module_accessor, 0);
     let rot_x = WorkModule::get_float(weapon.module_accessor, *WEAPON_SAMUS_MISSILE_INSTANCE_WORK_ID_FLOAT_ROT);
-    //println!("Main Posture: {rot_x}");
+    println!("Main Posture: {rot_x}");
 
     let life = WorkModule::get_param_int(weapon.module_accessor, hash40("param_missile"), hash40("h_life"));
     WorkModule::set_int(weapon.module_accessor, life,*WEAPON_INSTANCE_WORK_ID_INT_INIT_LIFE);
     
-    if rot_x >= 0.0  {
+    if rot_x >= -89.0  {
         return original!(weapon);
     }
     MotionModule::change_motion(weapon.module_accessor, Hash40::new("homing"), 0.0, 1.0, false, 0.0, false, false);

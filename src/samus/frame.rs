@@ -1,6 +1,6 @@
 use crate::imports::imports_agent::*;
 
-unsafe fn morphball_control_input(fighter: &mut L2CFighterCommon, boma: &mut BattleObjectModuleAccessor, status_kind: i32,situation_kind: i32, lr: f32, frame: f32) {
+unsafe fn morphball_control_input(fighter: &mut L2CFighterCommon, boma: *mut BattleObjectModuleAccessor, status_kind: i32,situation_kind: i32, lr: f32, frame: f32) {
     //Spawn a bomb
     if (
         ControlModule::check_button_trigger(boma, *CONTROL_PAD_BUTTON_ATTACK) || 
@@ -40,7 +40,7 @@ unsafe fn morphball_control_input(fighter: &mut L2CFighterCommon, boma: &mut Bat
     }
 }
 
-unsafe fn morphball_control_movement(fighter: &mut L2CFighterCommon, boma: &mut BattleObjectModuleAccessor, lr: f32, frame: f32) {
+unsafe fn morphball_control_movement(fighter: &mut L2CFighterCommon, boma: *mut BattleObjectModuleAccessor, lr: f32, frame: f32) {
     let stick_x = ControlModule::get_stick_x(boma);
     //MotionModule::set_rate(boma, stick_x.abs());
     if (stick_x.signum() != lr
@@ -76,7 +76,7 @@ unsafe fn morphball_control_movement(fighter: &mut L2CFighterCommon, boma: &mut 
     };
 }
 
-unsafe fn morphball_moveset(fighter: &mut L2CFighterCommon, boma: &mut BattleObjectModuleAccessor, status_kind: i32,situation_kind: i32, lr: f32, frame: f32) {    
+unsafe fn morphball_moveset(fighter: &mut L2CFighterCommon, boma: *mut BattleObjectModuleAccessor, status_kind: i32,situation_kind: i32, lr: f32, frame: f32) {    
     if [
         *FIGHTER_SAMUS_STATUS_KIND_SPECIAL_GROUND_LW, 
         *FIGHTER_SAMUS_STATUS_KIND_SPECIAL_AIR_LW,
@@ -120,7 +120,7 @@ unsafe fn morphball_moveset(fighter: &mut L2CFighterCommon, boma: &mut BattleObj
 }
 
 
-unsafe fn specials_force_weapon(boma: &mut BattleObjectModuleAccessor, battle_object: *mut BattleObject, status_kind: i32,situation_kind: i32, frame: f32) {
+unsafe fn specials_force_weapon(boma: *mut BattleObjectModuleAccessor, battle_object: *mut BattleObject, status_kind: i32,situation_kind: i32, frame: f32) {
     if StatusModule::is_changing(boma) {
         return;
     }
@@ -164,27 +164,23 @@ unsafe fn samus_update(fighter: &mut L2CFighterCommon) {
     if modulo < 1.0 {
         super::suit_effect(boma,fighter.battle_object);
     }
+    VarModule::countdown_int(fighter.battle_object, samus::instance::int::BOMB_COOLDOWN, 0);
+       
+    //super::suit_effect(fighter.module_accessor, fighter.battle_object);
+    //morphball_moveset(fighter,boma,status_kind,situation_kind,lr,frame);
+    specials_force_weapon(boma,fighter.battle_object,status_kind,situation_kind,frame);
     /* 
-    if let Some(info) = FighterInfo::get_common(fighter) {
-        let boma = &mut *info.boma;
-
-        VarModule::countdown_int(fighter.battle_object, samus::instance::int::BOMB_COOLDOWN, 0);
-        
-        //super::suit_effect(fighter.module_accessor, fighter.battle_object);
-        //morphball_moveset(fighter,boma,info.status_kind,info.situation_kind,info.lr,info.frame);
-        specials_force_weapon(boma,fighter.battle_object,info.status_kind,info.situation_kind,info.frame);
-        if (&[
-            *FIGHTER_STATUS_KIND_SQUAT_F,
-            *FIGHTER_STATUS_KIND_SQUAT_B
-        ]).contains(&info.status_kind) {
-            let speed_mul = if info.status_kind == *FIGHTER_STATUS_KIND_SQUAT_F {1.25} else {1.5};
-            sv_kinetic_energy!(set_speed_mul, fighter, FIGHTER_KINETIC_ENERGY_ID_MOTION, speed_mul);
-            WorkModule::unable_transition_term_group(fighter.module_accessor, *FIGHTER_STATUS_TRANSITION_GROUP_CHK_GROUND_SPECIAL);
-            WorkModule::unable_transition_term_group(fighter.module_accessor, *FIGHTER_STATUS_TRANSITION_GROUP_CHK_GROUND_ATTACK);
-            WorkModule::unable_transition_term_group(fighter.module_accessor, *FIGHTER_STATUS_TRANSITION_GROUP_CHK_GROUND);
-            //println!("Force crawl");
-            //StatusModule::change_status_force(boma, FIGHTER_SAMUS_STATUS_KIND_SPECIAL_GROUND_LW.into(), false.into());
-        }
+    if (&[
+        *FIGHTER_STATUS_KIND_SQUAT_F,
+        *FIGHTER_STATUS_KIND_SQUAT_B
+    ]).contains(&status_kind) {
+        let speed_mul = if status_kind == *FIGHTER_STATUS_KIND_SQUAT_F {1.25} else {1.5};
+        sv_kinetic_energy!(set_speed_mul, fighter, FIGHTER_KINETIC_ENERGY_ID_MOTION, speed_mul);
+        WorkModule::unable_transition_term_group(fighter.module_accessor, *FIGHTER_STATUS_TRANSITION_GROUP_CHK_GROUND_SPECIAL);
+        WorkModule::unable_transition_term_group(fighter.module_accessor, *FIGHTER_STATUS_TRANSITION_GROUP_CHK_GROUND_ATTACK);
+        WorkModule::unable_transition_term_group(fighter.module_accessor, *FIGHTER_STATUS_TRANSITION_GROUP_CHK_GROUND);
+        //println!("Force crawl");
+        //StatusModule::change_status_force(boma, FIGHTER_SAMUS_STATUS_KIND_SPECIAL_GROUND_LW.into(), false.into());
     }*/
 }
 
