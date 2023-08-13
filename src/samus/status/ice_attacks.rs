@@ -252,7 +252,7 @@ unsafe extern "C" fn ice_crash(fighter: &mut L2CFighterCommon) -> bool{
             //*COLLISION_KIND_MASK_HIT  |
             *COLLISION_KIND_MASK_SHIELD
         ){
-            if AttackModule::is_infliction(fighter.module_accessor, *COLLISION_KIND_MASK_SHIELD)
+            if AttackModule::is_infliction_status(fighter.module_accessor, *COLLISION_KIND_MASK_SHIELD)
             {
                 MotionAnimcmdModule::call_script_single(fighter.module_accessor, *FIGHTER_ANIMCMD_SOUND, Hash40::new("sound_ice_break"), -1);
             }

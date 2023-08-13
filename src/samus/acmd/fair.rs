@@ -1,8 +1,8 @@
 use crate::imports::imports_acmd::*;
 
-pub const DAMAGE: f32 = 14.0;
+pub const DAMAGE: f32 = 15.0;
 pub const ANGLE: u64 = 46;
-pub const KBG: i32 = 100;
+pub const KBG: i32 = 95;
 pub const BKB: i32 = 30;
 
 #[acmd_script( agent = "samus", script = "game_attackairf2", category = ACMD_GAME)]
@@ -14,6 +14,8 @@ unsafe fn game_attackairf(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         macros::ATTACK(agent, 0, 0, Hash40::new("armr"), DAMAGE, ANGLE, KBG, 0, BKB, 3.0, 3.75, 0.0, 0.0, None, None, None, 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_cutup"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_KICK, *ATTACK_REGION_PUNCH);
         macros::ATTACK(agent, 1, 0, Hash40::new("armr"), DAMAGE, ANGLE, KBG, 0, BKB, 3.0, 7.5, 0.0, 0.0, None, None, None, 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_cutup"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_KICK, *ATTACK_REGION_PUNCH);
+        macros::ATK_SET_SHIELD_SETOFF_MUL_arg3(agent, 0, 1, 1.125);
+        macros::ATK_SET_SHIELD_SETOFF_MUL_arg3(agent, 1, 1, 1.125);
     }
     wait(agent.lua_state_agent, 5.0);
     if macros::is_excute(agent) {

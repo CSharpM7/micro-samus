@@ -92,7 +92,11 @@ unsafe fn sound_throwhi(agent: &mut L2CAgentBase) {
         if !is_ice {
             macros::PLAY_SE(agent, Hash40::new("se_samus_special_s01"));
         }
+        else{
+            macros::PLAY_SE(agent, Hash40::new("se_samus_special_s02"));
+        }
         */
+        macros::PLAY_SE(agent, Hash40::new("se_samus_special_s01"));
     }
 }
 

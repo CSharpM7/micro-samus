@@ -27,6 +27,8 @@ pub use skyline::libc::c_char;
 #[skyline::main(name = "smashline_samus")]
 pub fn main() {
     data::gamemode::set_gamemode();
+    custom_vars::install();
+
     println!("[smashline_samus::main] Loading...");
     #[cfg(not(feature = "dev"))]{
         //Add hooks here
@@ -34,10 +36,11 @@ pub fn main() {
         println!("[smashline_samus::main] Dev Hook Installed");
         return;
         }
+        samus::install();
     }
 
-    custom_vars::install();
+    #[cfg(feature = "dev")]
+    samus::installer();
     //data::install();
-    samus::install();
     println!("[smashline_samus::main] Loaded!");
 }

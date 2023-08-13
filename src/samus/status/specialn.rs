@@ -93,6 +93,7 @@ unsafe fn special_n_f_main(fighter: &mut L2CFighterCommon) -> L2CValue {
 
     let charge = WorkModule::get_int(fighter.module_accessor, *FIGHTER_SAMUS_STATUS_SPECIAL_N_WORK_INT_COUNT);
     let charge_max = WorkModule::get_param_float(fighter.module_accessor, hash40("param_special_n"), hash40("cshot_charge_frame")) as i32;
+    let c = charge as f32 / charge_max as f32;
     //let is_max = charge >= charge_max;
     let is_max = false;
     let motion_g = if !is_max {Hash40::new("special_n_i")} else {Hash40::new("special_n_i")};
@@ -136,7 +137,6 @@ unsafe extern "C" fn special_n_f_main_loop(fighter: &mut L2CFighterCommon) -> L2
         KineticModule::change_kinetic(fighter.module_accessor, kinetic);
     }
     if MotionModule::is_end(fighter.module_accessor) {
-        println!("Is end");
         fighter.change_status_by_situation(FIGHTER_STATUS_KIND_WAIT.into(), FIGHTER_STATUS_KIND_FALL.into(),false.into());
         return 0.into();
     }

@@ -161,7 +161,7 @@ unsafe fn samus_update(fighter: &mut L2CFighterCommon) {
 
     let fx_fix_rate = 15.0;
     let modulo = frame % fx_fix_rate;
-    if modulo < 1.0 {
+    if modulo < 1.0 || frame <= 1.0 {
         super::suit_effect(boma,fighter.battle_object);
     }
     VarModule::countdown_int(fighter.battle_object, samus::instance::int::BOMB_COOLDOWN, 0);
@@ -218,9 +218,8 @@ pub fn install() {
     smashline::install_agent_frame_callbacks!(
       global_fighter_frame
     );
-    /*
+    #[cfg(not(feature = "dev"))]
     smashline::install_agent_frames!(
         samus_frame
-    );*/
-    //smashline::install_agent_frame_callback!(missile_callback);
+    );
 }

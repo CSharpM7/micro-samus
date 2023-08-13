@@ -73,20 +73,55 @@ unsafe fn sound_specialnhold(agent: &mut L2CAgentBase) {
 #[acmd_script( agent = "samus", scripts = ["game_specialnice","game_specialairnice"], category = ACMD_GAME, low_priority )]
 unsafe fn game_specialnice(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 3.0);
+    let mut damage=1.0;
+    let mut size=1.0;
     if macros::is_excute(agent) {
-        ArticleModule::shoot_exist(agent.module_accessor, *FIGHTER_SAMUS_GENERATE_ARTICLE_CSHOT, ArticleOperationTarget(*ARTICLE_OPE_TARGET_ALL), false);
-        WorkModule::on_flag(agent.module_accessor, *FIGHTER_SAMUS_STATUS_SPECIAL_N_FLAG_SHOOT);
+        let charge = WorkModule::get_int(agent.module_accessor, *FIGHTER_SAMUS_STATUS_SPECIAL_N_WORK_INT_COUNT) as f32;
+        let charge_max = WorkModule::get_param_float(agent.module_accessor, hash40("param_special_n"), hash40("cshot_charge_frame"));
+        let c = charge / charge_max;
+        let length = lerp(0.0,9.0,c);
+        damage = lerp(7.0,21.0,c);
+        let angle = if c < 0.5 {361 as u64} else {45 as u64};
+        let kbg = lerp(35.0,70.0,c) as i32;
+        let bkb = lerp(35.0,55.0,c) as i32;
+        size = lerp(1.5,5.0,c);
+        if c < 1.0 {
+            let level = if c < 0.5 {*ATTACK_SOUND_LEVEL_S} else {*ATTACK_SOUND_LEVEL_M};
+            let offset = 13.0-((1.0-c)*7.5);
+            println!("Length: {length}");
+
+            macros::ATTACK(agent, 0, 0, Hash40::new("top"), damage, angle, kbg, 0, bkb, size, 0.0, 10.0, offset, Some(0.0), Some(10.0), Some(14.0+length), 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0.0, 0.0, 0, true, true, false, false, false, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_sting"), level, *COLLISION_SOUND_ATTR_KICK, *ATTACK_REGION_ENERGY);
+        }
+        else{
+            macros::ATTACK(agent, 0, 0, Hash40::new("top"), damage, angle-10, kbg-10, 0, bkb-10, size, 0.0, 10.0, 14.0, Some(0.0), Some(10.0), Some(14.0+length), 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0.0, 0.0, 0, true, true, false, false, false, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_ice"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_FREEZE, *ATTACK_REGION_ENERGY);
+        }
+    }
+    wait(agent.lua_state_agent, 3.0);
+    if macros::is_excute(agent) {
+        FT_ADD_DAMAGE(agent,-damage/2.0);
+        AttackModule::set_size(agent.module_accessor,0,size*1.25);
+    }
+    wait(agent.lua_state_agent, 2.0);
+    if macros::is_excute(agent) {
+        AttackModule::clear_all(agent.module_accessor);
     }
 }
 #[acmd_script( agent = "samus", scripts = ["effect_specialnice","effect_specialairnice"], category = ACMD_EFFECT, low_priority )]
 unsafe fn effect_specialnice(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 3.0);
     if macros::is_excute(agent) {
-        //macros::EFFECT(agent, Hash40::new("samus_cshot_shot"), Hash40::new("top"), 6, 6, 0, 0, 0, 0, 0.9, 0, 0, 0, 0, 0, 0, false);
-        EFFECT(agent, Hash40::new("sys_muzzleflash"), Hash40::new("armr"), 7.9, 0.0, 0.0, 0, 0, 0, 2.5, 0, 0, 0, 0, 0, 0, false);
+        let charge = WorkModule::get_int(agent.module_accessor, *FIGHTER_SAMUS_STATUS_SPECIAL_N_WORK_INT_COUNT) as f32;
+        let charge_max = WorkModule::get_param_float(agent.module_accessor, hash40("param_special_n"), hash40("cshot_charge_frame"));
+        let c = charge / charge_max;
+        let length = lerp(1.0,3.0,c);
+        EFFECT(agent, Hash40::new("sys_muzzleflash"), Hash40::new("armr"), 7.9, 0.0, 0.0, 0, 0, 0, length/1.25, 0, 0, 0, 0, 0, 0, false);
         LAST_EFFECT_SET_COLOR(agent,0.25, 0.875,1.0);
         LAST_EFFECT_SET_RATE(agent,0.75);
-        LAST_EFFECT_SET_SCALE_W(agent,1.5,3.0,1.5);
+        LAST_EFFECT_SET_SCALE_W(agent,length/2.0,length,length/2.0);
+
+        if c >= 0.5 {
+            macros::EFFECT(agent, Hash40::new("samus_cshot_shot"), Hash40::new("top"), 6, 6, 0, 0, 0, 0, 0.9, 0, 0, 0, 0, 0, 0, false);
+        }
     }
     frame(agent.lua_state_agent, 4.0);
     if macros::is_excute(agent) {
