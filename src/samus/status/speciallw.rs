@@ -51,7 +51,7 @@ unsafe fn special_lw_main(fighter: &mut L2CFighterCommon) -> L2CValue {
         return original!(fighter);
     }
     let motion_g = if PostureModule::lr(fighter.module_accessor) < 0.0 {Hash40::new("special_lw_l")} else {Hash40::new("special_lw_r")};
-    let motion_a = if PostureModule::lr(fighter.module_accessor) < 0.0 {Hash40::new("special_air_lw_l")} else {Hash40::new("special_lw_r")};
+    let motion_a = if PostureModule::lr(fighter.module_accessor) < 0.0 {Hash40::new("special_air_lw_l")} else {Hash40::new("special_air_lw_r")};
     let motion = if fighter.is_situation(*SITUATION_KIND_GROUND) {motion_g} else {motion_a};
     MotionModule::change_motion(fighter.module_accessor, motion, 0.0, 1.0, false, 0.0, false, false);
     fighter.sub_shift_status_main(L2CValue::Ptr(speciallw_main_loop as *const () as _))
@@ -60,7 +60,7 @@ unsafe fn special_lw_main(fighter: &mut L2CFighterCommon) -> L2CValue {
 unsafe extern "C" fn speciallw_main_loop(fighter: &mut L2CFighterCommon) -> L2CValue {
     if StatusModule::is_situation_changed(fighter.module_accessor) {
         let motion_g = if PostureModule::lr(fighter.module_accessor) < 0.0 {Hash40::new("special_lw_l")} else {Hash40::new("special_lw_r")};
-        let motion_a = if PostureModule::lr(fighter.module_accessor) < 0.0 {Hash40::new("special_air_lw_l")} else {Hash40::new("special_lw_r")};
+        let motion_a = if PostureModule::lr(fighter.module_accessor) < 0.0 {Hash40::new("special_air_lw_l")} else {Hash40::new("special_air_lw_r")};
         fighter.sub_change_motion_by_situation(motion_g.into(), motion_a.into(), true.into());
 
         if fighter.is_situation(*SITUATION_KIND_GROUND) {

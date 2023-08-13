@@ -3181,6 +3181,66 @@ list:
       xlu_end: 0
       cancel_frame: 48
       no_stop_intp: false
+  special_n_i:
+    game_script: game_specialnice
+    flags:
+      turn: false
+      loop: false
+      move: false
+      fix_trans: false
+      fix_rot: false
+      fix_scale: false
+      unk_40: false
+      unk_80: true
+      unk_100: false
+      unk_200: false
+      unk_400: false
+      unk_800: false
+      unk_1000: false
+      unk_2000: false
+    blend_frames: 0
+    animations:
+      - name: d00specialn.nuanmb
+        unk: 0
+    scripts:
+      - expression_specialnice
+      - sound_specialnice
+      - effect_specialnice
+    extra:
+      xlu_start: 0
+      xlu_end: 0
+      cancel_frame: 32
+      no_stop_intp: false
+  special_n_i_max:
+    game_script: game_specialnicemax
+    flags:
+      turn: false
+      loop: false
+      move: false
+      fix_trans: false
+      fix_rot: false
+      fix_scale: false
+      unk_40: false
+      unk_80: true
+      unk_100: false
+      unk_200: false
+      unk_400: false
+      unk_800: false
+      unk_1000: false
+      unk_2000: false
+    blend_frames: 0
+    animations:
+      - name: d00specialnmax.nuanmb
+        unk: 0
+    scripts:
+      - expression_specialnicemax
+      - sound_specialnicemax
+      - effect_specialnicemax
+    extra:
+      xlu_start: 0
+      xlu_end: 0
+      cancel_frame: 48
+      no_stop_intp: false
   special_n_c:
     game_script: game_specialncancel
     flags:
@@ -3386,6 +3446,66 @@ list:
       - expression_specialairnfiremax
       - sound_specialairnfiremax
       - effect_specialairnfiremax
+    extra:
+      xlu_start: 0
+      xlu_end: 0
+      cancel_frame: 33
+      no_stop_intp: false
+  special_air_n_i:
+    game_script: game_specialairnice
+    flags:
+      turn: false
+      loop: false
+      move: false
+      fix_trans: false
+      fix_rot: false
+      fix_scale: false
+      unk_40: false
+      unk_80: true
+      unk_100: false
+      unk_200: false
+      unk_400: false
+      unk_800: false
+      unk_1000: false
+      unk_2000: false
+    blend_frames: 0
+    animations:
+      - name: d00specialairn.nuanmb
+        unk: 0
+    scripts:
+      - expression_specialairnice
+      - sound_specialairnice
+      - effect_specialairnice
+    extra:
+      xlu_start: 0
+      xlu_end: 0
+      cancel_frame: 33
+      no_stop_intp: false
+  special_air_n_i_max:
+    game_script: game_specialairnicemax
+    flags:
+      turn: false
+      loop: false
+      move: false
+      fix_trans: false
+      fix_rot: false
+      fix_scale: false
+      unk_40: false
+      unk_80: true
+      unk_100: false
+      unk_200: false
+      unk_400: false
+      unk_800: false
+      unk_1000: false
+      unk_2000: false
+    blend_frames: 0
+    animations:
+      - name: d00specialairnmax.nuanmb
+        unk: 0
+    scripts:
+      - expression_specialairnicemax
+      - sound_specialairnicemax
+      - effect_specialairnicemax
     extra:
       xlu_start: 0
       xlu_end: 0
