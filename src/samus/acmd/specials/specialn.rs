@@ -45,16 +45,20 @@ unsafe fn effect_specialnhold(agent: &mut L2CAgentBase) {
         }
     }
     frame(agent.lua_state_agent, 2.0);
-    for i in 0..100 {
-        if macros::is_excute(agent) {
-            macros::FOOT_EFFECT(agent, Hash40::new("sys_dash_smoke"), Hash40::new("top"), -8, 0, 0, 0, 0, 0, 1, 12, 0, 12, 0, 0, 0, false);
-            if is_ice {
-                //let size = 1.0+(i as f32 / 6.0);
-                //macros::EFFECT_FOLLOW(agent, Hash40::new("sys_starrod_splash"), Hash40::new("armr"), 7.5, 0, 0, 0, 0, 0, size, true);
-                //LAST_EFFECT_SET_COLOR(agent,0.375, 1.0,1.0);
+    if macros::is_excute(agent) {
+        if MotionModule::motion_kind(agent.module_accessor) == Hash40::new("effect_specialairnhold").hash {
+            for i in 0..100 {
+                if macros::is_excute(agent) {
+                    macros::FOOT_EFFECT(agent, Hash40::new("sys_dash_smoke"), Hash40::new("top"), -8, 0, 0, 0, 0, 0, 1, 12, 0, 12, 0, 0, 0, false);
+                    if is_ice {
+                        //let size = 1.0+(i as f32 / 6.0);
+                        //macros::EFFECT_FOLLOW(agent, Hash40::new("sys_starrod_splash"), Hash40::new("armr"), 7.5, 0, 0, 0, 0, 0, size, true);
+                        //LAST_EFFECT_SET_COLOR(agent,0.375, 1.0,1.0);
+                    }
+                }
+                wait(agent.lua_state_agent, 12.0);
             }
         }
-        wait(agent.lua_state_agent, 12.0);
     }
 }
 #[acmd_script( agent = "samus", scripts = ["sound_specialnhold","sound_specialairnhold"], category = ACMD_SOUND, low_priority )]
@@ -90,10 +94,10 @@ unsafe fn game_specialnice(agent: &mut L2CAgentBase) {
             let offset = 13.0-((1.0-c)*7.5);
             println!("Length: {length}");
 
-            macros::ATTACK(agent, 0, 0, Hash40::new("top"), damage, angle, kbg, 0, bkb, size, 0.0, 10.0, offset, Some(0.0), Some(10.0), Some(14.0+length), 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0.0, 0.0, 0, true, true, false, false, false, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_sting"), level, *COLLISION_SOUND_ATTR_KICK, *ATTACK_REGION_ENERGY);
+            macros::ATTACK(agent, 0, 0, Hash40::new("top"), damage, angle, kbg, 0, bkb, size, 0.0, 10.0, offset, Some(0.0), Some(10.0), Some(14.0+length), 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, -1.0, 0.0, 0, true, true, false, false, false, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_sting"), level, *COLLISION_SOUND_ATTR_KICK, *ATTACK_REGION_ENERGY);
         }
         else{
-            macros::ATTACK(agent, 0, 0, Hash40::new("top"), damage, angle-10, kbg-10, 0, bkb-10, size, 0.0, 10.0, 14.0, Some(0.0), Some(10.0), Some(14.0+length), 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0.0, 0.0, 0, true, true, false, false, false, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_ice"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_FREEZE, *ATTACK_REGION_ENERGY);
+            macros::ATTACK(agent, 0, 0, Hash40::new("top"), damage, angle-10, kbg-10, 0, bkb-10, size, -1.0, 10.0, 14.0, Some(0.0), Some(10.0), Some(14.0+length), 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_F, false, 0.0, 0.0, 0, true, true, false, false, false, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_ice"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_FREEZE, *ATTACK_REGION_ENERGY);
         }
     }
     wait(agent.lua_state_agent, 3.0);
@@ -125,8 +129,10 @@ unsafe fn effect_specialnice(agent: &mut L2CAgentBase) {
     }
     frame(agent.lua_state_agent, 4.0);
     if macros::is_excute(agent) {
-        macros::LANDING_EFFECT(agent, Hash40::new("sys_h_smoke_b"), Hash40::new("top"), 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, false);
-        macros::FLASH(agent, 1, 0.753, 1, 0.706);
+        if MotionModule::motion_kind(agent.module_accessor) == Hash40::new("effect_specialairnice").hash {
+            macros::LANDING_EFFECT(agent, Hash40::new("sys_h_smoke_b"), Hash40::new("top"), 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, false);
+            macros::FLASH(agent, 1, 0.753, 1, 0.706);
+        }
     }
     frame(agent.lua_state_agent, 5.0);
     if macros::is_excute(agent) {

@@ -1,7 +1,7 @@
-display_name="Wario's Moveset Shake-up"
+display_name="Ice Beam Moveset"
 description="""
-Some of Wario's moves have been changed to more accurately reflect his Wario Land/World abilities! Is this the new top tier to fear?
-Requires Smashline and Skyline
+Inspired by PM's Ice Beam, this gives samus an overhaul by giving her Ice Beam. Press down special to switch beams, and this will change her Neutral Special, Side Special, Down Tilt, Forward Smash, Forward Air, and Up Throw. She now has a crawl, and a unique crawl attack that can spawn a bomb.
+Requires Latest Smashline and Skyline
 """
 version="1.0"
 category="Param"
