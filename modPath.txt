@@ -1,1 +1,1 @@
-sd:/ultimate/mods/SamusMoveset/plugin.nro
+sd:/ultimate/mods/IceBeamMoveset/plugin.nro

@@ -1,4 +1,4 @@
-$pluginLIB = "target/aarch64-skyline-switch/release/libsmashline_warioland.nro"
+$pluginLIB = "target/aarch64-skyline-switch/release/libsmashline_samus.nro"
 $pluginNRO = "target/aarch64-skyline-switch/release/plugin.nro"
 if (Test-Path $pluginNRO) {
     Remove-Item $pluginNRO

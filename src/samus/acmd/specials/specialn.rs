@@ -16,7 +16,7 @@ unsafe fn game_specialnrapid(agent: &mut L2CAgentBase) {
         }
     }
 }
-#[acmd_script( agent = "samus", scripts = ["game_specialnstart","game_specialairnstart"], category = ACMD_GAME, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["game_specialnstart","game_specialairnstart"], category = ACMD_GAME)]
 unsafe fn game_specialnstart(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 14.0);
     if macros::is_excute(agent) {
@@ -26,7 +26,7 @@ unsafe fn game_specialnstart(agent: &mut L2CAgentBase) {
         }
     }
 }
-#[acmd_script( agent = "samus", scripts = ["effect_specialnhold","effect_specialairnhold"], category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["effect_specialnhold","effect_specialairnhold"], category = ACMD_EFFECT)]
 unsafe fn effect_specialnhold(agent: &mut L2CAgentBase) {
     let mut is_ice = false;
     frame(agent.lua_state_agent, 1.0);
@@ -61,7 +61,7 @@ unsafe fn effect_specialnhold(agent: &mut L2CAgentBase) {
         }
     }
 }
-#[acmd_script( agent = "samus", scripts = ["sound_specialnhold","sound_specialairnhold"], category = ACMD_SOUND, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["sound_specialnhold","sound_specialairnhold"], category = ACMD_SOUND)]
 unsafe fn sound_specialnhold(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 1.0);
     if macros::is_excute(agent) {
@@ -74,7 +74,7 @@ unsafe fn sound_specialnhold(agent: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", scripts = ["game_specialnice","game_specialairnice"], category = ACMD_GAME, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["game_specialnice","game_specialairnice"], category = ACMD_GAME)]
 unsafe fn game_specialnice(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 3.0);
     let mut damage=1.0;
@@ -110,7 +110,7 @@ unsafe fn game_specialnice(agent: &mut L2CAgentBase) {
         AttackModule::clear_all(agent.module_accessor);
     }
 }
-#[acmd_script( agent = "samus", scripts = ["effect_specialnice","effect_specialairnice"], category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["effect_specialnice","effect_specialairnice"], category = ACMD_EFFECT)]
 unsafe fn effect_specialnice(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 3.0);
     if macros::is_excute(agent) {
@@ -143,7 +143,7 @@ unsafe fn effect_specialnice(agent: &mut L2CAgentBase) {
         macros::COL_NORMAL(agent);
     }
 }
-#[acmd_script( agent = "samus", scripts = ["sound_specialnice","sound_specialairnice"], category = ACMD_SOUND, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["sound_specialnice","sound_specialairnice"], category = ACMD_SOUND)]
 unsafe fn sound_specialnice(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         macros::STOP_SE(agent, Hash40::new("se_samus_special_n01"));
@@ -168,7 +168,7 @@ unsafe fn sound_specialnice(agent: &mut L2CAgentBase) {
         }
     }
 }
-#[acmd_script( agent = "samus", scripts = ["expression_specialnice","expression_specialairnice"], category = ACMD_EXPRESSION, low_priority )]
+#[acmd_script( agent = "samus", scripts = ["expression_specialnice","expression_specialairnice"], category = ACMD_EXPRESSION)]
 unsafe fn expression_specialnice(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         slope!(agent, *MA_MSC_CMD_SLOPE_SLOPE, *SLOPE_STATUS_LR);

@@ -1,5 +1,14 @@
 {
     "share-to-added": {
+        "fighter/samus/motion/body/c00/l04eye.nuanmb": [
+            "fighter/samus/motion/body/c01/l04eye.nuanmb",
+            "fighter/samus/motion/body/c02/l04eye.nuanmb",
+            "fighter/samus/motion/body/c03/l04eye.nuanmb",
+            "fighter/samus/motion/body/c04/l04eye.nuanmb",
+            "fighter/samus/motion/body/c05/l04eye.nuanmb",
+            "fighter/samus/motion/body/c06/l04eye.nuanmb",
+            "fighter/samus/motion/body/c07/l04eye.nuanmb"
+        ],
         "fighter/samus/motion/body/c00/c02attacklw3.nuanmb": [
             "fighter/samus/motion/body/c01/c02attacklw3.nuanmb",
             "fighter/samus/motion/body/c02/c02attacklw3.nuanmb",
@@ -8,24 +17,6 @@
             "fighter/samus/motion/body/c05/c02attacklw3.nuanmb",
             "fighter/samus/motion/body/c06/c02attacklw3.nuanmb",
             "fighter/samus/motion/body/c07/c02attacklw3.nuanmb"
-        ],
-        "fighter/samus/motion/body/c00/d03speciallw.nuanmb": [
-            "fighter/samus/motion/body/c01/d03speciallw.nuanmb",
-            "fighter/samus/motion/body/c02/d03speciallw.nuanmb",
-            "fighter/samus/motion/body/c03/d03speciallw.nuanmb",
-            "fighter/samus/motion/body/c04/d03speciallw.nuanmb",
-            "fighter/samus/motion/body/c05/d03speciallw.nuanmb",
-            "fighter/samus/motion/body/c06/d03speciallw.nuanmb",
-            "fighter/samus/motion/body/c07/d03speciallw.nuanmb"
-        ],
-        "fighter/samus/motion/body/c00/j01appealsl.nuanmb": [
-            "fighter/samus/motion/body/c01/j01appealsl.nuanmb",
-            "fighter/samus/motion/body/c02/j01appealsl.nuanmb",
-            "fighter/samus/motion/body/c03/j01appealsl.nuanmb",
-            "fighter/samus/motion/body/c04/j01appealsl.nuanmb",
-            "fighter/samus/motion/body/c05/j01appealsl.nuanmb",
-            "fighter/samus/motion/body/c06/j01appealsl.nuanmb",
-            "fighter/samus/motion/body/c07/j01appealsl.nuanmb"
         ],
         "fighter/samus/motion/body/c00/j01appealsr.nuanmb": [
             "fighter/samus/motion/body/c01/j01appealsr.nuanmb",
@@ -36,148 +27,456 @@
             "fighter/samus/motion/body/c06/j01appealsr.nuanmb",
             "fighter/samus/motion/body/c07/j01appealsr.nuanmb"
         ],
-        "fighter/samus/motion/body/c00/l04eye.nuanmb": [
+        "fighter/samus/motion/body/c00/j01appealsl.nuanmb": [
+            "fighter/samus/motion/body/c01/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c02/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c03/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c04/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c05/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c06/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c07/j01appealsl.nuanmb"
+        ],
+        "fighter/samus/motion/body/c00/d03speciallw.nuanmb": [
+            "fighter/samus/motion/body/c01/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c02/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c03/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c04/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c05/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c06/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c07/d03speciallw.nuanmb"
+        ],
+        "fighter/samus/motion/gun/c00/l01gun.nuanmb": [
+            "fighter/samus/motion/gun/c01/l01gun.nuanmb",
+            "fighter/samus/motion/gun/c02/l01gun.nuanmb",
+            "fighter/samus/motion/gun/c03/l01gun.nuanmb",
+            "fighter/samus/motion/gun/c04/l01gun.nuanmb",
+            "fighter/samus/motion/gun/c05/l01gun.nuanmb",
+            "fighter/samus/motion/gun/c06/l01gun.nuanmb",
+            "fighter/samus/motion/gun/c07/l01gun.nuanmb"
+        ],
+        "fighter/samus/motion/body/c01/l04eye.nuanmb": [
             "fighter/samus/motion/body/c01/l04eye.nuanmb",
+            "fighter/samus/motion/body/c01/l04eye.nuanmb",
+            "fighter/samus/motion/body/c01/l04eye.nuanmb",
+            "fighter/samus/motion/body/c01/l04eye.nuanmb",
+            "fighter/samus/motion/body/c01/l04eye.nuanmb",
+            "fighter/samus/motion/body/c01/l04eye.nuanmb",
+            "fighter/samus/motion/body/c01/l04eye.nuanmb"
+        ],
+        "fighter/samus/motion/body/c01/c02attacklw3.nuanmb": [
+            "fighter/samus/motion/body/c01/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c01/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c01/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c01/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c01/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c01/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c01/c02attacklw3.nuanmb"
+        ],
+        "fighter/samus/motion/body/c01/j01appealsr.nuanmb": [
+            "fighter/samus/motion/body/c01/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c01/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c01/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c01/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c01/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c01/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c01/j01appealsr.nuanmb"
+        ],
+        "fighter/samus/motion/body/c01/j01appealsl.nuanmb": [
+            "fighter/samus/motion/body/c01/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c01/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c01/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c01/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c01/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c01/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c01/j01appealsl.nuanmb"
+        ],
+        "fighter/samus/motion/body/c01/d03speciallw.nuanmb": [
+            "fighter/samus/motion/body/c01/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c01/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c01/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c01/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c01/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c01/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c01/d03speciallw.nuanmb"
+        ],
+        "fighter/samus/motion/body/c02/l04eye.nuanmb": [
             "fighter/samus/motion/body/c02/l04eye.nuanmb",
+            "fighter/samus/motion/body/c02/l04eye.nuanmb",
+            "fighter/samus/motion/body/c02/l04eye.nuanmb",
+            "fighter/samus/motion/body/c02/l04eye.nuanmb",
+            "fighter/samus/motion/body/c02/l04eye.nuanmb",
+            "fighter/samus/motion/body/c02/l04eye.nuanmb",
+            "fighter/samus/motion/body/c02/l04eye.nuanmb"
+        ],
+        "fighter/samus/motion/body/c02/c02attacklw3.nuanmb": [
+            "fighter/samus/motion/body/c02/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c02/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c02/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c02/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c02/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c02/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c02/c02attacklw3.nuanmb"
+        ],
+        "fighter/samus/motion/body/c02/j01appealsr.nuanmb": [
+            "fighter/samus/motion/body/c02/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c02/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c02/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c02/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c02/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c02/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c02/j01appealsr.nuanmb"
+        ],
+        "fighter/samus/motion/body/c02/j01appealsl.nuanmb": [
+            "fighter/samus/motion/body/c02/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c02/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c02/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c02/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c02/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c02/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c02/j01appealsl.nuanmb"
+        ],
+        "fighter/samus/motion/body/c02/d03speciallw.nuanmb": [
+            "fighter/samus/motion/body/c02/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c02/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c02/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c02/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c02/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c02/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c02/d03speciallw.nuanmb"
+        ],
+        "fighter/samus/motion/body/c03/l04eye.nuanmb": [
             "fighter/samus/motion/body/c03/l04eye.nuanmb",
+            "fighter/samus/motion/body/c03/l04eye.nuanmb",
+            "fighter/samus/motion/body/c03/l04eye.nuanmb",
+            "fighter/samus/motion/body/c03/l04eye.nuanmb",
+            "fighter/samus/motion/body/c03/l04eye.nuanmb",
+            "fighter/samus/motion/body/c03/l04eye.nuanmb",
+            "fighter/samus/motion/body/c03/l04eye.nuanmb"
+        ],
+        "fighter/samus/motion/body/c03/c02attacklw3.nuanmb": [
+            "fighter/samus/motion/body/c03/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c03/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c03/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c03/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c03/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c03/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c03/c02attacklw3.nuanmb"
+        ],
+        "fighter/samus/motion/body/c03/j01appealsr.nuanmb": [
+            "fighter/samus/motion/body/c03/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c03/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c03/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c03/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c03/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c03/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c03/j01appealsr.nuanmb"
+        ],
+        "fighter/samus/motion/body/c03/j01appealsl.nuanmb": [
+            "fighter/samus/motion/body/c03/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c03/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c03/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c03/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c03/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c03/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c03/j01appealsl.nuanmb"
+        ],
+        "fighter/samus/motion/body/c03/d03speciallw.nuanmb": [
+            "fighter/samus/motion/body/c03/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c03/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c03/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c03/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c03/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c03/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c03/d03speciallw.nuanmb"
+        ],
+        "fighter/samus/motion/body/c04/l04eye.nuanmb": [
             "fighter/samus/motion/body/c04/l04eye.nuanmb",
+            "fighter/samus/motion/body/c04/l04eye.nuanmb",
+            "fighter/samus/motion/body/c04/l04eye.nuanmb",
+            "fighter/samus/motion/body/c04/l04eye.nuanmb",
+            "fighter/samus/motion/body/c04/l04eye.nuanmb",
+            "fighter/samus/motion/body/c04/l04eye.nuanmb",
+            "fighter/samus/motion/body/c04/l04eye.nuanmb"
+        ],
+        "fighter/samus/motion/body/c04/c02attacklw3.nuanmb": [
+            "fighter/samus/motion/body/c04/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c04/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c04/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c04/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c04/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c04/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c04/c02attacklw3.nuanmb"
+        ],
+        "fighter/samus/motion/body/c04/j01appealsr.nuanmb": [
+            "fighter/samus/motion/body/c04/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c04/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c04/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c04/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c04/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c04/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c04/j01appealsr.nuanmb"
+        ],
+        "fighter/samus/motion/body/c04/j01appealsl.nuanmb": [
+            "fighter/samus/motion/body/c04/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c04/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c04/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c04/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c04/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c04/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c04/j01appealsl.nuanmb"
+        ],
+        "fighter/samus/motion/body/c04/d03speciallw.nuanmb": [
+            "fighter/samus/motion/body/c04/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c04/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c04/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c04/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c04/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c04/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c04/d03speciallw.nuanmb"
+        ],
+        "fighter/samus/motion/body/c05/l04eye.nuanmb": [
             "fighter/samus/motion/body/c05/l04eye.nuanmb",
+            "fighter/samus/motion/body/c05/l04eye.nuanmb",
+            "fighter/samus/motion/body/c05/l04eye.nuanmb",
+            "fighter/samus/motion/body/c05/l04eye.nuanmb",
+            "fighter/samus/motion/body/c05/l04eye.nuanmb",
+            "fighter/samus/motion/body/c05/l04eye.nuanmb",
+            "fighter/samus/motion/body/c05/l04eye.nuanmb"
+        ],
+        "fighter/samus/motion/body/c05/c02attacklw3.nuanmb": [
+            "fighter/samus/motion/body/c05/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c05/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c05/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c05/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c05/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c05/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c05/c02attacklw3.nuanmb"
+        ],
+        "fighter/samus/motion/body/c05/j01appealsr.nuanmb": [
+            "fighter/samus/motion/body/c05/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c05/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c05/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c05/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c05/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c05/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c05/j01appealsr.nuanmb"
+        ],
+        "fighter/samus/motion/body/c05/j01appealsl.nuanmb": [
+            "fighter/samus/motion/body/c05/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c05/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c05/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c05/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c05/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c05/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c05/j01appealsl.nuanmb"
+        ],
+        "fighter/samus/motion/body/c05/d03speciallw.nuanmb": [
+            "fighter/samus/motion/body/c05/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c05/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c05/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c05/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c05/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c05/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c05/d03speciallw.nuanmb"
+        ],
+        "fighter/samus/motion/body/c06/l04eye.nuanmb": [
             "fighter/samus/motion/body/c06/l04eye.nuanmb",
+            "fighter/samus/motion/body/c06/l04eye.nuanmb",
+            "fighter/samus/motion/body/c06/l04eye.nuanmb",
+            "fighter/samus/motion/body/c06/l04eye.nuanmb",
+            "fighter/samus/motion/body/c06/l04eye.nuanmb",
+            "fighter/samus/motion/body/c06/l04eye.nuanmb",
+            "fighter/samus/motion/body/c06/l04eye.nuanmb"
+        ],
+        "fighter/samus/motion/body/c06/c02attacklw3.nuanmb": [
+            "fighter/samus/motion/body/c06/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c06/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c06/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c06/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c06/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c06/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c06/c02attacklw3.nuanmb"
+        ],
+        "fighter/samus/motion/body/c06/j01appealsr.nuanmb": [
+            "fighter/samus/motion/body/c06/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c06/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c06/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c06/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c06/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c06/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c06/j01appealsr.nuanmb"
+        ],
+        "fighter/samus/motion/body/c06/j01appealsl.nuanmb": [
+            "fighter/samus/motion/body/c06/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c06/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c06/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c06/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c06/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c06/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c06/j01appealsl.nuanmb"
+        ],
+        "fighter/samus/motion/body/c06/d03speciallw.nuanmb": [
+            "fighter/samus/motion/body/c06/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c06/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c06/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c06/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c06/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c06/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c06/d03speciallw.nuanmb"
+        ],
+        "fighter/samus/motion/body/c07/l04eye.nuanmb": [
+            "fighter/samus/motion/body/c07/l04eye.nuanmb",
+            "fighter/samus/motion/body/c07/l04eye.nuanmb",
+            "fighter/samus/motion/body/c07/l04eye.nuanmb",
+            "fighter/samus/motion/body/c07/l04eye.nuanmb",
+            "fighter/samus/motion/body/c07/l04eye.nuanmb",
+            "fighter/samus/motion/body/c07/l04eye.nuanmb",
             "fighter/samus/motion/body/c07/l04eye.nuanmb"
         ],
-        "fighter/samus/motion/gun/c00/motion_list.bin": [
-            "fighter/samus/motion/gun/c01/motion_list.bin",
-            "fighter/samus/motion/gun/c02/motion_list.bin",
-            "fighter/samus/motion/gun/c03/motion_list.bin",
-            "fighter/samus/motion/gun/c04/motion_list.bin",
-            "fighter/samus/motion/gun/c05/motion_list.bin",
-            "fighter/samus/motion/gun/c06/motion_list.bin",
-            "fighter/samus/motion/gun/c07/motion_list.bin"
+        "fighter/samus/motion/body/c07/c02attacklw3.nuanmb": [
+            "fighter/samus/motion/body/c07/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c07/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c07/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c07/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c07/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c07/c02attacklw3.nuanmb",
+            "fighter/samus/motion/body/c07/c02attacklw3.nuanmb"
+        ],
+        "fighter/samus/motion/body/c07/j01appealsr.nuanmb": [
+            "fighter/samus/motion/body/c07/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c07/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c07/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c07/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c07/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c07/j01appealsr.nuanmb",
+            "fighter/samus/motion/body/c07/j01appealsr.nuanmb"
+        ],
+        "fighter/samus/motion/body/c07/j01appealsl.nuanmb": [
+            "fighter/samus/motion/body/c07/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c07/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c07/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c07/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c07/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c07/j01appealsl.nuanmb",
+            "fighter/samus/motion/body/c07/j01appealsl.nuanmb"
+        ],
+        "fighter/samus/motion/body/c07/d03speciallw.nuanmb": [
+            "fighter/samus/motion/body/c07/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c07/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c07/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c07/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c07/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c07/d03speciallw.nuanmb",
+            "fighter/samus/motion/body/c07/d03speciallw.nuanmb"
         ]
     },
     "new-dir-files": {
-        "fighter/samus/cmn/effect": [
-            "effect/fighter/samus/trail/tex_samus_ice1.nutexb"
-        ],
         "fighter/samus/c00": [
+            "fighter/samus/motion/body/c00/c05attackairf2.nuanmb",
             "fighter/samus/motion/body/c00/a05squatb.nuanmb",
             "fighter/samus/motion/body/c00/a05squatf.nuanmb",
-            "fighter/samus/motion/body/c00/c03attacks4charge2.nuanmb",
-            "fighter/samus/motion/body/c00/c03attacks4s2.nuanmb",
-            "fighter/samus/motion/body/c00/c04attackhi42.nuanmb",
-            "fighter/samus/motion/body/c00/c04attackhi4charge2.nuanmb",
-            "fighter/samus/motion/body/c00/c05attackairf2.nuanmb",
-            "fighter/samus/motion/body/c00/d00specialnrapid.nuanmb",
+            "fighter/samus/motion/body/c00/d03speciallwr.nuanmb",
+            "fighter/samus/motion/body/c00/d03speciallwl.nuanmb",
             "fighter/samus/motion/body/c00/d03specialairlwl.nuanmb",
             "fighter/samus/motion/body/c00/d03specialairlwr.nuanmb",
-            "fighter/samus/motion/body/c00/d03speciallwl.nuanmb",
-            "fighter/samus/motion/body/c00/d03speciallwr.nuanmb",
-            "fighter/samus/motion/gun/c00/c03attacks4s2.nuanmb"
+            "fighter/samus/motion/body/c00/c03attacks4charge2.nuanmb",
+            "fighter/samus/motion/body/c00/c03attacks4s2.nuanmb",
+            "fighter/samus/motion/body/c00/c04attackhi4charge2.nuanmb",
+            "fighter/samus/motion/body/c00/c04attackhi42.nuanmb"
         ],
         "fighter/samus/c01": [
+            "fighter/samus/motion/body/c01/c05attackairf2.nuanmb",
             "fighter/samus/motion/body/c01/a05squatb.nuanmb",
             "fighter/samus/motion/body/c01/a05squatf.nuanmb",
-            "fighter/samus/motion/body/c01/c03attacks4charge2.nuanmb",
-            "fighter/samus/motion/body/c01/c03attacks4s2.nuanmb",
-            "fighter/samus/motion/body/c01/c04attackhi42.nuanmb",
-            "fighter/samus/motion/body/c01/c04attackhi4charge2.nuanmb",
-            "fighter/samus/motion/body/c01/c05attackairf2.nuanmb",
-            "fighter/samus/motion/body/c01/d00specialnrapid.nuanmb",
+            "fighter/samus/motion/body/c01/d03speciallwr.nuanmb",
+            "fighter/samus/motion/body/c01/d03speciallwl.nuanmb",
             "fighter/samus/motion/body/c01/d03specialairlwl.nuanmb",
             "fighter/samus/motion/body/c01/d03specialairlwr.nuanmb",
-            "fighter/samus/motion/body/c01/d03speciallwl.nuanmb",
-            "fighter/samus/motion/body/c01/d03speciallwr.nuanmb",
-            "fighter/samus/motion/gun/c01/c03attacks4s2.nuanmb"
+            "fighter/samus/motion/body/c01/c03attacks4charge2.nuanmb",
+            "fighter/samus/motion/body/c01/c03attacks4s2.nuanmb",
+            "fighter/samus/motion/body/c01/c04attackhi4charge2.nuanmb",
+            "fighter/samus/motion/body/c01/c04attackhi42.nuanmb"
         ],
         "fighter/samus/c02": [
+            "fighter/samus/motion/body/c02/c05attackairf2.nuanmb",
             "fighter/samus/motion/body/c02/a05squatb.nuanmb",
             "fighter/samus/motion/body/c02/a05squatf.nuanmb",
-            "fighter/samus/motion/body/c02/c03attacks4charge2.nuanmb",
-            "fighter/samus/motion/body/c02/c03attacks4s2.nuanmb",
-            "fighter/samus/motion/body/c02/c04attackhi42.nuanmb",
-            "fighter/samus/motion/body/c02/c04attackhi4charge2.nuanmb",
-            "fighter/samus/motion/body/c02/c05attackairf2.nuanmb",
-            "fighter/samus/motion/body/c02/d00specialnrapid.nuanmb",
+            "fighter/samus/motion/body/c02/d03speciallwr.nuanmb",
+            "fighter/samus/motion/body/c02/d03speciallwl.nuanmb",
             "fighter/samus/motion/body/c02/d03specialairlwl.nuanmb",
             "fighter/samus/motion/body/c02/d03specialairlwr.nuanmb",
-            "fighter/samus/motion/body/c02/d03speciallwl.nuanmb",
-            "fighter/samus/motion/body/c02/d03speciallwr.nuanmb",
-            "fighter/samus/motion/gun/c02/c03attacks4s2.nuanmb"
+            "fighter/samus/motion/body/c02/c03attacks4charge2.nuanmb",
+            "fighter/samus/motion/body/c02/c03attacks4s2.nuanmb",
+            "fighter/samus/motion/body/c02/c04attackhi4charge2.nuanmb",
+            "fighter/samus/motion/body/c02/c04attackhi42.nuanmb"
         ],
         "fighter/samus/c03": [
+            "fighter/samus/motion/body/c03/c05attackairf2.nuanmb",
             "fighter/samus/motion/body/c03/a05squatb.nuanmb",
             "fighter/samus/motion/body/c03/a05squatf.nuanmb",
-            "fighter/samus/motion/body/c03/c03attacks4charge2.nuanmb",
-            "fighter/samus/motion/body/c03/c03attacks4s2.nuanmb",
-            "fighter/samus/motion/body/c03/c04attackhi42.nuanmb",
-            "fighter/samus/motion/body/c03/c04attackhi4charge2.nuanmb",
-            "fighter/samus/motion/body/c03/c05attackairf2.nuanmb",
-            "fighter/samus/motion/body/c03/d00specialnrapid.nuanmb",
+            "fighter/samus/motion/body/c03/d03speciallwr.nuanmb",
+            "fighter/samus/motion/body/c03/d03speciallwl.nuanmb",
             "fighter/samus/motion/body/c03/d03specialairlwl.nuanmb",
             "fighter/samus/motion/body/c03/d03specialairlwr.nuanmb",
-            "fighter/samus/motion/body/c03/d03speciallwl.nuanmb",
-            "fighter/samus/motion/body/c03/d03speciallwr.nuanmb",
-            "fighter/samus/motion/gun/c03/c03attacks4s2.nuanmb"
+            "fighter/samus/motion/body/c03/c03attacks4charge2.nuanmb",
+            "fighter/samus/motion/body/c03/c03attacks4s2.nuanmb",
+            "fighter/samus/motion/body/c03/c04attackhi4charge2.nuanmb",
+            "fighter/samus/motion/body/c03/c04attackhi42.nuanmb"
         ],
         "fighter/samus/c04": [
+            "fighter/samus/motion/body/c04/c05attackairf2.nuanmb",
             "fighter/samus/motion/body/c04/a05squatb.nuanmb",
             "fighter/samus/motion/body/c04/a05squatf.nuanmb",
-            "fighter/samus/motion/body/c04/c03attacks4charge2.nuanmb",
-            "fighter/samus/motion/body/c04/c03attacks4s2.nuanmb",
-            "fighter/samus/motion/body/c04/c04attackhi42.nuanmb",
-            "fighter/samus/motion/body/c04/c04attackhi4charge2.nuanmb",
-            "fighter/samus/motion/body/c04/c05attackairf2.nuanmb",
-            "fighter/samus/motion/body/c04/d00specialnrapid.nuanmb",
+            "fighter/samus/motion/body/c04/d03speciallwr.nuanmb",
+            "fighter/samus/motion/body/c04/d03speciallwl.nuanmb",
             "fighter/samus/motion/body/c04/d03specialairlwl.nuanmb",
             "fighter/samus/motion/body/c04/d03specialairlwr.nuanmb",
-            "fighter/samus/motion/body/c04/d03speciallwl.nuanmb",
-            "fighter/samus/motion/body/c04/d03speciallwr.nuanmb",
-            "fighter/samus/motion/gun/c04/c03attacks4s2.nuanmb"
+            "fighter/samus/motion/body/c04/c03attacks4charge2.nuanmb",
+            "fighter/samus/motion/body/c04/c03attacks4s2.nuanmb",
+            "fighter/samus/motion/body/c04/c04attackhi4charge2.nuanmb",
+            "fighter/samus/motion/body/c04/c04attackhi42.nuanmb"
         ],
         "fighter/samus/c05": [
+            "fighter/samus/motion/body/c05/c05attackairf2.nuanmb",
             "fighter/samus/motion/body/c05/a05squatb.nuanmb",
             "fighter/samus/motion/body/c05/a05squatf.nuanmb",
-            "fighter/samus/motion/body/c05/c03attacks4charge2.nuanmb",
-            "fighter/samus/motion/body/c05/c03attacks4s2.nuanmb",
-            "fighter/samus/motion/body/c05/c04attackhi42.nuanmb",
-            "fighter/samus/motion/body/c05/c04attackhi4charge2.nuanmb",
-            "fighter/samus/motion/body/c05/c05attackairf2.nuanmb",
-            "fighter/samus/motion/body/c05/d00specialnrapid.nuanmb",
+            "fighter/samus/motion/body/c05/d03speciallwr.nuanmb",
+            "fighter/samus/motion/body/c05/d03speciallwl.nuanmb",
             "fighter/samus/motion/body/c05/d03specialairlwl.nuanmb",
             "fighter/samus/motion/body/c05/d03specialairlwr.nuanmb",
-            "fighter/samus/motion/body/c05/d03speciallwl.nuanmb",
-            "fighter/samus/motion/body/c05/d03speciallwr.nuanmb",
-            "fighter/samus/motion/gun/c05/c03attacks4s2.nuanmb"
+            "fighter/samus/motion/body/c05/c03attacks4charge2.nuanmb",
+            "fighter/samus/motion/body/c05/c03attacks4s2.nuanmb",
+            "fighter/samus/motion/body/c05/c04attackhi4charge2.nuanmb",
+            "fighter/samus/motion/body/c05/c04attackhi42.nuanmb"
         ],
         "fighter/samus/c06": [
+            "fighter/samus/motion/body/c06/c05attackairf2.nuanmb",
             "fighter/samus/motion/body/c06/a05squatb.nuanmb",
             "fighter/samus/motion/body/c06/a05squatf.nuanmb",
-            "fighter/samus/motion/body/c06/c03attacks4charge2.nuanmb",
-            "fighter/samus/motion/body/c06/c03attacks4s2.nuanmb",
-            "fighter/samus/motion/body/c06/c04attackhi42.nuanmb",
-            "fighter/samus/motion/body/c06/c04attackhi4charge2.nuanmb",
-            "fighter/samus/motion/body/c06/c05attackairf2.nuanmb",
-            "fighter/samus/motion/body/c06/d00specialnrapid.nuanmb",
+            "fighter/samus/motion/body/c06/d03speciallwr.nuanmb",
+            "fighter/samus/motion/body/c06/d03speciallwl.nuanmb",
             "fighter/samus/motion/body/c06/d03specialairlwl.nuanmb",
             "fighter/samus/motion/body/c06/d03specialairlwr.nuanmb",
-            "fighter/samus/motion/body/c06/d03speciallwl.nuanmb",
-            "fighter/samus/motion/body/c06/d03speciallwr.nuanmb",
-            "fighter/samus/motion/gun/c06/c03attacks4s2.nuanmb"
+            "fighter/samus/motion/body/c06/c03attacks4charge2.nuanmb",
+            "fighter/samus/motion/body/c06/c03attacks4s2.nuanmb",
+            "fighter/samus/motion/body/c06/c04attackhi4charge2.nuanmb",
+            "fighter/samus/motion/body/c06/c04attackhi42.nuanmb"
         ],
         "fighter/samus/c07": [
+            "fighter/samus/motion/body/c07/c05attackairf2.nuanmb",
             "fighter/samus/motion/body/c07/a05squatb.nuanmb",
             "fighter/samus/motion/body/c07/a05squatf.nuanmb",
-            "fighter/samus/motion/body/c07/c03attacks4charge2.nuanmb",
-            "fighter/samus/motion/body/c07/c03attacks4s2.nuanmb",
-            "fighter/samus/motion/body/c07/c04attackhi42.nuanmb",
-            "fighter/samus/motion/body/c07/c04attackhi4charge2.nuanmb",
-            "fighter/samus/motion/body/c07/c05attackairf2.nuanmb",
-            "fighter/samus/motion/body/c07/d00specialnrapid.nuanmb",
+            "fighter/samus/motion/body/c07/d03speciallwr.nuanmb",
+            "fighter/samus/motion/body/c07/d03speciallwl.nuanmb",
             "fighter/samus/motion/body/c07/d03specialairlwl.nuanmb",
             "fighter/samus/motion/body/c07/d03specialairlwr.nuanmb",
-            "fighter/samus/motion/body/c07/d03speciallwl.nuanmb",
-            "fighter/samus/motion/body/c07/d03speciallwr.nuanmb",
-            "fighter/samus/motion/gun/c07/c03attacks4s2.nuanmb"
+            "fighter/samus/motion/body/c07/c03attacks4charge2.nuanmb",
+            "fighter/samus/motion/body/c07/c03attacks4s2.nuanmb",
+            "fighter/samus/motion/body/c07/c04attackhi4charge2.nuanmb",
+            "fighter/samus/motion/body/c07/c04attackhi42.nuanmb"
+        ],
+        "fighter/samus/cmn/effect": [
+            "effect/fighter/samus/trail/tex_samus_ice1.nutexb"
         ]
     }
 }

@@ -1,6 +1,6 @@
 use crate::imports::imports_acmd::*;
 
-#[acmd_script( agent = "samus_supermissile", script = "game_straight", category = ACMD_GAME, low_priority )]
+#[acmd_script( agent = "samus_supermissile", script = "game_straight", category = ACMD_GAME)]
 unsafe fn game_straight(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         let isThrow = PostureModule::rot_x(agent.module_accessor, 0) < -89.9;

@@ -28,6 +28,7 @@ pub use skyline::libc::c_char;
 pub fn main() {
     data::gamemode::set_gamemode();
     custom_vars::install();
+    //data::install();
 
     println!("[smashline_samus::main] Loading...");
     #[cfg(not(feature = "dev"))]{
@@ -41,6 +42,5 @@ pub fn main() {
 
     #[cfg(feature = "dev")]
     samus::installer();
-    //data::install();
     println!("[smashline_samus::main] Loaded!");
 }

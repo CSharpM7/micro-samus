@@ -4,7 +4,7 @@ use crate::samus::*;
 pub const THROW_FRAME: f32 = 5.0;
 pub const MISSILE_FRAME: f32 = 15.0;
 
-#[acmd_script( agent = "samus", script = "game_throwhi", category = ACMD_GAME, low_priority )]
+#[acmd_script( agent = "samus", script = "game_throwhi", category = ACMD_GAME)]
 unsafe fn game_throwhi(agent: &mut L2CAgentBase) {
     let mut is_ice = false;
     let mut opponent_boma = agent.module_accessor;
@@ -50,7 +50,7 @@ unsafe fn game_throwhi(agent: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", script = "effect_throwhi", category = ACMD_EFFECT, low_priority )]
+#[acmd_script( agent = "samus", script = "effect_throwhi", category = ACMD_EFFECT)]
 unsafe fn effect_throwhi(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         macros::LANDING_EFFECT(agent, Hash40::new("sys_whirlwind_r"), Hash40::new("top"), 0, 0, 0, 0, 0, 0, 0.8, 0, 0, 0, 0, 0, 0, true);
@@ -79,7 +79,7 @@ unsafe fn effect_throwhi(agent: &mut L2CAgentBase) {
     }*/
 }
 
-#[acmd_script( agent = "samus", script = "sound_throwhi", category = ACMD_SOUND, low_priority )]
+#[acmd_script( agent = "samus", script = "sound_throwhi", category = ACMD_SOUND)]
 unsafe fn sound_throwhi(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, THROW_FRAME);
     if macros::is_excute(agent) {
@@ -100,7 +100,7 @@ unsafe fn sound_throwhi(agent: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "samus", script = "expression_throwhi", category = ACMD_EXPRESSION, low_priority )]
+#[acmd_script( agent = "samus", script = "expression_throwhi", category = ACMD_EXPRESSION)]
 unsafe fn expression_throwhi(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         slope!(agent, *MA_MSC_CMD_SLOPE_SLOPE, *SLOPE_STATUS_LR);

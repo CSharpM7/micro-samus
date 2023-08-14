@@ -95,7 +95,7 @@ fn copy_dir_all(src: impl AsRef<Path>, dst: impl AsRef<Path>) -> io::Result<()> 
 pub fn patch_files()
 {
     unsafe {
-        let motionFolder = format!("{}/fighter/koopa/motion/body",&*MOD_DIR.read().unwrap());
+        let motionFolder = format!("{}/fighter/samus/motion/body",&*MOD_DIR.read().unwrap());
         let slots=8;
         if !Path::new(motionFolder.as_str()).exists()
         {
