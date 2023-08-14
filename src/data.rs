@@ -44,7 +44,7 @@ pub mod gamemode {
         if Path::new(hdr_folderStage).exists(){
             hdr_enabled = hdr_enabled || arcropolis_api::is_mod_enabled(arcropolis_api::hash40(hdr_folderStage).as_u64())
         }
-        println!("[smashline_bowsersbigblast::data] HDR: {}",hdr_enabled);
+        println!("[smashline_samus::data] HDR: {}",hdr_enabled);
 
         let mut ultS_enabled = false;
         let ultS_folder = "sd:/ultimate/mods/Ultimate S Arcropolis";
@@ -55,7 +55,7 @@ pub mod gamemode {
         if Path::new(ultS_folderStage).exists(){
             ultS_enabled = ultS_enabled || arcropolis_api::is_mod_enabled(arcropolis_api::hash40(ultS_folderStage).as_u64())
         }
-        println!("[smashline_bowsersbigblast::data] Ult-S: {}",ultS_enabled);
+        println!("[smashline_samus::data] Ult-S: {}",ultS_enabled);
         {
             if hdr_enabled{
                 *GAMEMODE.write().unwrap() = GAMEMODE_HDR;
@@ -67,7 +67,7 @@ pub mod gamemode {
 
     }
 }
-const IDENTIFIER: &str = "smashline_bowsersbigblast";
+const IDENTIFIER: &str = "smashline_samus";
 
 use std::sync::RwLock;
 lazy_static! {
@@ -85,7 +85,7 @@ fn copy_dir_all(src: impl AsRef<Path>, dst: impl AsRef<Path>) -> io::Result<()> 
         } else {
             if entry.file_name().to_str().unwrap() == "vl.prcxml" {continue;}
             std::fs::copy(entry.path(), dst.as_ref().join(entry.file_name()))?;
-            println!("[smashline_bowsersbigblast::data] copied {} to {}",entry.file_name().to_str().unwrap(),dst.as_ref().to_str().unwrap());
+            println!("[smashline_samus::data] copied {} to {}",entry.file_name().to_str().unwrap(),dst.as_ref().to_str().unwrap());
         }
     }
 
@@ -99,7 +99,7 @@ pub fn patch_files()
         let slots=8;
         if !Path::new(motionFolder.as_str()).exists()
         {
-            println!("[smashline_bowsersbigblast::data] WTF?");
+            println!("[smashline_samus::data] WTF?");
             return;
         }
         let file = "motion_list.motdiff";
@@ -116,7 +116,7 @@ pub fn patch_files()
             else{
                 copy_dir_all(sourceFolder.as_str(),destFolder.as_str());
             }
-            println!("[smashline_bowsersbigblast::data] copied motion files to {}",destFile);
+            println!("[smashline_samus::data] copied motion files to {}",destFile);
         }
         let idFile = format!("{}/{}",&*MOD_DIR.read().unwrap(),IDENTIFIER);
         fs::remove_file(idFile.as_str());
@@ -155,6 +155,6 @@ pub fn install() {
         install_thread.join();
     }
     else{
-        println!("[smashline_bowsersbigblast::data] Couldnt find mod folder");
+        println!("[smashline_samus::data] Couldnt find mod folder");
     }
 }

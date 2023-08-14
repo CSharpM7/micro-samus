@@ -104,7 +104,7 @@ unsafe fn special_lw_lr(fighter: &mut L2CFighterCommon) -> L2CValue {
         return 0.into();
     }
     let motion_g = if PostureModule::lr(fighter.module_accessor) < 0.0 {Hash40::new("special_lw_l")} else {Hash40::new("special_lw_r")};
-    let motion_a = if PostureModule::lr(fighter.module_accessor) < 0.0 {Hash40::new("special_air_lw_l")} else {Hash40::new("special_lw_r")};
+    let motion_a = if PostureModule::lr(fighter.module_accessor) < 0.0 {Hash40::new("special_air_lw_l")} else {Hash40::new("special_air_lw_r")};
     fighter.sub_change_motion_by_situation(motion_g.into(), motion_a.into(), true.into());
 
     0.into()
